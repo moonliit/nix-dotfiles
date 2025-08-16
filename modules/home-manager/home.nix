@@ -6,7 +6,7 @@
   home.stateVersion = "25.05";
 
   imports = [
-    import ./terminals/kitty.nix
-    import ./terminals/zsh.nix
+    ./terminals/kitty.nix
+    ./terminals/zsh.nix
   ];
 }
