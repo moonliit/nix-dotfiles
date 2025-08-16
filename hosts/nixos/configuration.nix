@@ -21,7 +21,7 @@ in
     backupFileExtension = "backup";
     
     users = {
-      "moonliit" = import ./home.nix;
+      "moonliit" = import ../../modules/home-manager/home.nix;
     };
   }; 
 
