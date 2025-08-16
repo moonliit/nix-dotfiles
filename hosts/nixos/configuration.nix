@@ -12,7 +12,6 @@ in
 
   # Host level overrides
   networking.hostname = "nixos";
-  virtualisation.virtualbox.guest.enable = inVBox;
 
   # Enable home manager
   home-manager = {
@@ -33,7 +32,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos";
+  # Networking
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
