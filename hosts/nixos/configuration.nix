@@ -28,6 +28,14 @@ in
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Environment variables
+  environment.variables = {
+    NIXOS_CONFIG_DIR = "$HOME/Dotfiles";
+    NIXOS_CONFIG = "$HOME/Dotfiles/hosts/nixos/configuration.nix";
+    NIXOS_MODULES_DIR = "$HOME/Dotfiles/modules";
+    EDITOR = "nvim";
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
