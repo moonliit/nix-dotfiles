@@ -92,7 +92,8 @@ in
   services.printing.enable = true;
   
   # Enable bluetooth
-  services.bluetooth.enable = true;
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   # Enable sound.
   # services.pulseaudio.enable = true;
