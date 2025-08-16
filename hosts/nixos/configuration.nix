@@ -11,7 +11,7 @@ in
     ];
 
   # Host level overrides
-  networking.hostname = "nixos";
+  networking.hostName = "nixos";
 
   # Enable home manager
   home-manager = {
