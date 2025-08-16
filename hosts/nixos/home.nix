@@ -7,9 +7,9 @@
 
   programs.bash = {
     enable = true;
+    enableCompletion = true;
     shellAliases = {
-      btw = "echo i use nixos btw";
-      nrs = "sudo nixos-rebuild switch";
+      rebuild = "sudo nixos-rebuild switch --flake ~/Dotfiles";
     };
   };
 
