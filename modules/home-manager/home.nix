@@ -11,5 +11,6 @@
     ./terminals/zsh/zsh.nix
     ./terminals/starship/starship.nix
     ./terminals/fastfetch/fastfetch.nix
+    ./terminals/hyfetch/hyfetch.nix
   ];
 }
