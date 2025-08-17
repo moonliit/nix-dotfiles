@@ -3,8 +3,9 @@
 
 {
   programs.zsh = {
+    enable = true;
     enableCompletion = true;
-    shellAliases = {
+    shellGlobalAliases = {
       rebuild = "sudo nixos-rebuild switch --flake ~/Dotfiles";
     };
   };
