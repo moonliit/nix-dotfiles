@@ -5,9 +5,16 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    shellGlobalAliases = {
+    
+    shellAliases = {
+      # browse
+      # hyfetch
       rebuild = "sudo nixos-rebuild switch --flake ~/Dotfiles";
     };
+
+    initExtra = ''
+      neowofetch
+    '';
   };
 
   programs.zsh.oh-my-zsh = {
@@ -15,7 +22,13 @@
     theme = "jnrowe";
     plugins = [
       "git"
+      "bundler"
+      "dotenv"
       "docker"
+      "macos"
+      "rake"
+      "rbenv"
+      "ruby"
     ];
   };
 }
