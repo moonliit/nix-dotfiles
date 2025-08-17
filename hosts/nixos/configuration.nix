@@ -142,7 +142,7 @@ in
     fastfetch
     hyfetch
     starship
-    pywal16
+    wallust
     zsh
     oh-my-zsh
     pcmanfm

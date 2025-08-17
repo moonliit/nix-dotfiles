@@ -8,12 +8,11 @@
     
     shellAliases = {
       # browse
-      # hyfetch
       rebuild = "sudo nixos-rebuild switch --flake ~/Dotfiles";
     };
 
     initExtra = ''
-      neowofetch
+      hyfetch
     '';
   };
 
