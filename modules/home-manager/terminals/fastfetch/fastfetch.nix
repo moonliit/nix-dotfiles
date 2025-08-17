@@ -1,0 +1,82 @@
+{ lib, ... }:
+
+let
+  fastfetchConfig = {
+    "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
+
+    logo = {
+      padding = {
+        left = 1;
+        top = 3;
+      };
+    };
+
+    modules = [
+      "break"
+
+      {
+        type = "custom";
+        format = "┌──────────────────────── Hardware ────────────────────────┐";
+        outputColor = "red";
+      }
+
+      # hardware info
+      { type = "title"; key = " PC"; }
+      { type = "cpu"; key = "│ ├󰍛 CPU"; showPeCoreCount = true; format = "{1}"; }
+      { type = "gpu"; key = "│ ├󰍛 GPU"; }
+      { type = "disk"; key = "│ ├ Disk"; }
+      { type = "memory"; key = "│ ├ Memory"; }
+      { type = "battery"; key = "│ ├ Battery"; format = "{/4}{-}{/}{4}{?5} [{5}]{?}"; }
+      { type = "localip"; key = "└ └󱦂 Local Ip"; }
+
+      {
+        type = "custom";
+        format = "└─────────────────────────────────────────────────────────┘";
+        outputColor = "red";
+      }
+
+      "break"
+
+      {
+        type = "custom";
+        format = "┌──────────────────────── Software ────────────────────────┐";
+        outputColor = "red";
+      }
+
+      # software info
+      { type = "os"; key = " OS"; outputColor = "red"; }
+      { type = "kernel"; key = "│ ├ Kernel"; }
+      { type = "packages"; key = "│ ├󰏖 Packages"; }
+      { type = "terminal"; key = "│ ├ Terminal"; }
+      { type = "shell"; key = "└ └ Shell"; }
+
+      "break"
+
+      { type = "de"; key = " DE"; outputColor = "red"; }
+      { type = "lm"; key = "│ ├ LM"; }
+      { type = "wm"; key = "│ ├ WM"; }
+      { type = "gpu"; key = "│ ├󰍛 GPU Driver"; format = "{3}"; }
+      { type = "wmtheme"; key = "└ └󰉼 Theme"; }
+
+      {
+        type = "custom";
+        format = "└─────────────────────────────────────────────────────────┘";
+        outputColor = "red";
+      }
+
+      "break"
+
+      {
+        type = "custom";
+        format = "                   \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m";
+      }
+
+      "break"
+    ];
+  };
+in
+{
+  xdg.configFile."fastfetch/config.jsonc".text =
+    builtins.toJSON fastfetchConfig;
+}
+

@@ -10,5 +10,6 @@
     ./terminals/kitty/kitty.nix
     ./terminals/zsh/zsh.nix
     ./terminals/starship/starship.nix
+    ./terminals/fastfetch/fastfetch.nix
   ];
 }
