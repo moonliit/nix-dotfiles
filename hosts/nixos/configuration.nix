@@ -2,13 +2,13 @@
 
 let
   inVBox = true;
+  homeManagerPath = "../../modules/home-manager/home.nix";
 in
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Host level overrides
   networking.hostName = "nixos";
@@ -19,9 +19,8 @@ in
     useUserPackages = true;
     useGlobalPkgs = true;
     backupFileExtension = "backup";
-    
     users = {
-      "moonliit" = import ../../modules/home-manager/home.nix;
+      "moonliit" = import homeManagerPath;
     };
   }; 
 
@@ -29,12 +28,7 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Environment variables
-  environment.variables = {
-    NIXOS_CONFIG_DIR = "$HOME/Dotfiles";
-    NIXOS_CONFIG = "$HOME/Dotfiles/hosts/nixos/configuration.nix";
-    NIXOS_MODULES_DIR = "$HOME/Dotfiles/modules";
-    EDITOR = "nvim";
-  };
+  environment.variables = import ./env-vars.nix;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -129,27 +123,7 @@ in
   };
 
   # List packages installed in system profile.
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    neovim
-    kitty
-    btop
-    gedit
-    bat
-    xwallpaper
-    git
-    fastfetch
-    hyfetch
-    starship
-    wallust
-    pywal
-    zsh
-    oh-my-zsh
-    pcmanfm
-    rofi
-    gh
-  ];
+  environment.systemPackages = import ./packages.nix { inherit pkgs; };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
