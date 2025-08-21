@@ -143,6 +143,7 @@ in
     hyfetch
     starship
     wallust
+    pywal
     zsh
     oh-my-zsh
     pcmanfm

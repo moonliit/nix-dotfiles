@@ -16,7 +16,6 @@
             "format": "┌──────────────────────── Hardware ────────────────────────┐",
             "outputColor": "red"
         },
-		// hardware info
 		
 			{
 				"type": "title",
@@ -65,7 +64,6 @@
             "format": "┌──────────────────────── Software ────────────────────────┐",
             "outputColor": "red"
         },
-		// software info
 
 			{
 				"type": "os",
@@ -126,7 +124,6 @@
 		{
             "type": "custom",
 
-			//         │ ├󰍛 GPU: NVIDIA GeForce GTX 1650 Mobile / Max-Q [Discrete]
             "format": "                   \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m"
         },
         "break"
