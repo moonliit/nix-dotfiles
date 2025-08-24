@@ -12,6 +12,6 @@
     ./terminals/starship/starship.nix
     ./terminals/fastfetch/fastfetch.nix
     ./terminals/hyfetch/hyfetch.nix
-    ./terminals/wallust/wallust.nix
+    ./terminals/wal/wal.nix
   ];
 }

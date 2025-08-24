@@ -2,7 +2,6 @@
 
 let
   inVBox = true;
-  homeManagerPath = "../../modules/home-manager/home.nix";
 in
 {
   imports = [
@@ -20,7 +19,7 @@ in
     useGlobalPkgs = true;
     backupFileExtension = "backup";
     users = {
-      "moonliit" = import homeManagerPath;
+      "moonliit" = import ../../modules/home-manager/home.nix;
     };
   }; 
 
@@ -53,7 +52,7 @@ in
     enable = true;
     windowManager.qtile.enable = true;
     displayManager.sessionCommands = ''
-      xwallpaper --maximize ~/wallpapers/ena.jpg
+      xwallpaper --maximize ~/Dotfiles/wallpapers/ena.jpg
       xset r rate 200 35 &
     '';
   };
