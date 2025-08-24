@@ -11,7 +11,7 @@
       rebuild = "sudo nixos-rebuild switch --flake ~/Dotfiles";
     };
 
-    initExtra = ''
+    initContent = ''
       hyfetch
     '';
   };

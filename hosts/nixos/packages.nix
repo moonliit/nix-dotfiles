@@ -20,4 +20,5 @@ with pkgs; [
   pcmanfm
   rofi
   gh
+  jq
 ]
