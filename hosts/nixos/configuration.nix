@@ -2,6 +2,7 @@
 
 let
   inVBox = true;
+  wallpaper = "oneshot.jpg";
 in
 {
   imports = [
@@ -52,7 +53,7 @@ in
     enable = true;
     windowManager.qtile.enable = true;
     displayManager.sessionCommands = ''
-      xwallpaper --maximize ~/Dotfiles/wallpapers/ena.jpg
+      xwallpaper --maximize ~/Dotfiles/wallpapers/${wallpaper}
       xset r rate 200 35 &
     '';
   };
