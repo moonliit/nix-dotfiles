@@ -1,7 +1,0 @@
-[colors]
-backend = "wal"
-palette = "dark16"
-check_contrast = true
-
-[templates]
-json = "./colors.json"
