@@ -13,5 +13,7 @@
     ./terminals/fastfetch/fastfetch.nix
     ./terminals/hyfetch/hyfetch.nix
     ./terminals/wal/wal.nix
+    # IDEs
+    ./ide/vscode/vscode.nix
   ];
 }

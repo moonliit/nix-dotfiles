@@ -59,6 +59,10 @@ in
       xwallpaper --zoom ~/Dotfiles/wallpapers/${wallpaper}
       xset r rate 200 35 &
     '';
+    libinput = {
+      enable = true;
+      touchpad.naturalScrolling = true;
+    };
   };
 
   # Picom compositor
@@ -102,10 +106,14 @@ in
 
   # Enable sound.
   # services.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
   # OR
   services.pipewire = {
     enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -126,6 +134,7 @@ in
   };
 
   # List packages installed in system profile.
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = import ./packages.nix { inherit pkgs; };
 
   # Some programs need SUID wrappers, can be configured further or are
