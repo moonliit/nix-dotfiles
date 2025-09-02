@@ -2,6 +2,7 @@
 
 let
   inVBox = false;
+  isLatam = false;
   wallpaper = "oneshot.jpg";
 in
 {
@@ -35,8 +36,7 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Networking
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Lima";
@@ -45,7 +45,9 @@ in
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16";
-    keyMap = pkgs.lib.mkForce "la-latin1";
+    keyMap = pkgs.lib.mkForce (
+      if isLatam then "la-latin1" else "us"
+    );
   };
 
   # Enable the X11 windowing system.
@@ -88,7 +90,7 @@ in
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "latam";
+    layout = if isLatam then "latam" else "us";
   };
 
   # Fonts
@@ -158,24 +160,5 @@ in
   # accidentally delete configuration.nix.
   # system.copySystemConfiguration = true;
 
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.05"; # Did you read the comment?
-
+  system.stateVersion = "25.05";
 }
-
