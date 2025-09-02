@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  customExtensions = import ./extensions.nix { inherit pkgs; };
+in
 {
   programs.vscode = {
     enable = true;
@@ -10,6 +13,11 @@
         ms-python.python
         ms-vscode.cpptools
         rust-lang.rust-analyzer
+
+	# Themes
+        zhuangtongfa.material-theme
+	pkief.material-icon-theme
+        customExtensions.prideTheme
       ];
       userSettings = {};
     };
