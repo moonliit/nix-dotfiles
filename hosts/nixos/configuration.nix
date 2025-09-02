@@ -59,10 +59,12 @@ in
       xwallpaper --zoom ~/Dotfiles/wallpapers/${wallpaper}
       xset r rate 200 35 &
     '';
-    libinput = {
-      enable = true;
-      touchpad.naturalScrolling = true;
-    };
+  };
+
+  # Libinput settings for touchpad support
+  services.libinput = {
+    enable = true;
+    touchpad.naturalScrolling = true;
   };
 
   # Picom compositor
@@ -105,9 +107,7 @@ in
   services.blueman.enable = true;
 
   # Enable sound.
-  # services.pulseaudio.enable = true;
-  hardware.pulseaudio.enable = false;
-  # OR
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -115,9 +115,6 @@ in
     pulse.enable = true;
     jack.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
 
   # Enable programs
   programs.zsh.enable = true;

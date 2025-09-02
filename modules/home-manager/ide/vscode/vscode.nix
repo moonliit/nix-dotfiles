@@ -4,10 +4,14 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscode-fhs;
-    extensions = with pgs.vscode-extensions; [
-     ms-python.python
-     ms-vscode.cpptools
-     rust-lang.rust-analyzer
-    ];
+    
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        ms-python.python
+        ms-vscode.cpptools
+        rust-lang.rust-analyzer
+      ];
+      userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
+    };
   };
 }

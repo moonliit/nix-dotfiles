@@ -1,0 +1,179 @@
+{
+    "makefile.configureOnOpen": true,
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+        "*.sqlite": "${capture}.${extname}-*",
+        "*.db": "${capture}.${extname}-*",
+        "*.sqlite3": "${capture}.${extname}-*",
+        "*.db3": "${capture}.${extname}-*",
+        "*.sdb": "${capture}.${extname}-*",
+        "*.s3db": "${capture}.${extname}-*"
+    },
+    "C_Cpp.default.compilerPath": "",
+    "workbench.colorTheme": "Non-binary (Dark)",
+    "workbench.iconTheme": "material-icon-theme",
+    
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#ffcc00",  // Change cursor color
+        "editor.selectionBackground": "#44475a",  // Change selection color
+      
+        "statusBar.background": "#1e1e1e",  // Change to your preferred color
+        "statusBar.foreground": "#9a59cf",  // Text color
+        "statusBar.noFolderBackground": "#1e1e1e",  // Color when no folder is open
+        "statusBar.debuggingBackground": "#ff5555"  // Color in debugging mode
+    
+    },
+
+    "editor.semanticTokenColorCustomizations": {
+      "rules": {
+        "parameter": "#00c3ff",  // Change to your preferred color
+        "variable.readonly": "#16a2ff" // Const variables
+      }
+    },
+
+    "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      // python stuff
+      {
+        "scope": "source.python",
+        "settings": {
+          "foreground": "#b0fafa"  // Change to your preferred color
+        }
+      },
+      {
+        "scope": "entity.name.function",
+        "settings": {
+          "foreground": "#ffcc00"  // Change to your preferred color
+        }
+      },
+      {
+        "scope": "support.function",
+        "settings": {
+          "foreground": "#ffcc00"  // Change to your preferred color
+        }
+      },
+      {
+        "scope": "meta.function-call.generic.python",
+        "settings": {
+          "foreground": "#ffcc00"  // Change to your preferred color
+        }
+      },
+      {
+        "scope": "meta.function-call.arguments.python",
+        "settings": {
+          "foreground": "#b0fafa"  // Change to your preferred color
+        }
+      },
+      {
+        "scope": "constant.other.caps",
+        "settings": {
+          "foreground": "#16a2ff",  // Doxygen-style comments (/** ... */)
+        }
+      },
+      // general stuff
+      {
+        "scope": "variable.other",
+        "settings": {
+          "foreground": "#b0fafa"  // Change to your preferred color
+        }
+      },
+      {
+        "scope": "string.quoted",
+        "settings": {
+          "foreground": "#f58d51"  // Change for string literals
+        }
+      },
+      {
+        "scope": "constant.numeric",
+        "settings": {
+          "foreground": "#eb55ff"  // Change for numeric literals
+        }
+      },
+      // prefix / suffix
+      {
+        "scope": "keyword.other.unit.suffix.floating-point.cpp",
+        "settings": {
+          "foreground": "#eb55ff"  // Suffixes (like F in 1.5F)
+        }
+      },
+      {
+        "scope": "keyword.other.unit.hexadecimal.cpp",
+        "settings": {
+          "foreground": "#eb55ff"  // Hex prefix (like 0x in 0x1F3)
+        }
+      },
+      {
+        "scope": "keyword.other.unit.binary.cpp",
+        "settings": {
+          "foreground": "#eb55ff"  // Binary prefix (like 0b in 0b1011)
+        }
+      },
+      // comments
+      {
+        "scope": "comment",
+        "settings": {
+          "foreground": "#50fa7b",  // Regular comment color
+          "fontStyle": "bold"     // Optional: makes comments italic
+        }
+      },
+      {
+        "scope": "comment.line",
+        "settings": {
+          "foreground": "#50fa7b"  // Line comments (//)
+        }
+      },
+      {
+        "scope": "comment.block",
+        "settings": {
+          "foreground": "#50fa7b"  // Block comments (/* ... */)
+        }
+      },
+      {
+        "scope": "comment.documentation",
+        "settings": {
+          "foreground": "#50fa7b",  // Doxygen-style comments (/** ... */)
+          "fontStyle": "bold italic"
+        }
+      },
+      // stuff
+      {
+        "scope": "constant.other.caps.rust",
+        "settings": {
+          "foreground": "#16a2ff",  // Doxygen-style comments (/** ... */)
+        }
+      },
+      {
+        "scope": "entity.name",
+        "settings": {
+          "foreground": "#ea00ff",  // Doxygen-style comments (/** ... */)
+        }
+      },
+      {
+        "scope": "entity.name.namespace",
+        "settings": {
+          "foreground": "#00fff2",  // Namespaces (std::)
+        }
+      },
+      {
+        "scope": "entity.name.type.class.templated",
+        "settings": {
+          "foreground": "#00ffbf",  // Classes with templates (vector<T>)
+        }
+      },
+      {
+        "scope": "keyword.operator.cast",
+        "settings": {
+          "foreground": "#00ffbf",  // Classes with templates (vector<T>)
+        }
+      },
+    ]
+  },
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "'0xProto Nerd Font Mono'",
+  "editor.fontFamily": "'0xProto Nerd Font Mono'"
+}
