@@ -1,7 +1,7 @@
 { config, pkgs, lib, inputs, ... }:
 
 let
-  inVBox = true;
+  inVBox = false;
   wallpaper = "oneshot.jpg";
 in
 {
@@ -53,10 +53,10 @@ in
     enable = true;
     windowManager.qtile.enable = true;
     resolutions = [
-      { x = 1600; y = 900; }
+      { x = 1920; y = 1200; }
     ];
     displayManager.sessionCommands = ''
-      xwallpaper --maximize ~/Dotfiles/wallpapers/${wallpaper}
+      xwallpaper --zoom ~/Dotfiles/wallpapers/${wallpaper}
       xset r rate 200 35 &
     '';
   };
