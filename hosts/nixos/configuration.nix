@@ -50,18 +50,16 @@ in
     );
   };
 
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    windowManager.qtile.enable = true;
-    resolutions = [
-      { x = 1920; y = 1200; }
-    ];
-    displayManager.sessionCommands = ''
-      xwallpaper --zoom ~/Dotfiles/wallpapers/${wallpaper}
-      xset r rate 200 35 &
-    '';
-  };
+  # Disable X11
+  services.xserver.enable = false;
+  services.picom.enable = false;
+
+  # Enable seatd (for seat/session management in Wayland)
+  services.seatd.enable = true;
+
+  programs.hyprland.enable = true;
+  programs.hyprland.xwayland.enable = true;
+  programs.waybar.enable = true;
 
   # Libinput settings for touchpad support
   services.libinput = {
@@ -69,28 +67,9 @@ in
     touchpad.naturalScrolling = true;
   };
 
-  # Picom compositor
-  services.picom = {
-    enable = true;
-
-    # Choose backend automatically
-    backend = lib.mkForce (if inVBox then "xrender" else "glx");
-
-    # Safer defaults for portability
-    fade = true;
-    settings = {
-      vsync = true;
-    };
-  };
-
   # VirtualBox guest additions for the VM
   virtualisation.virtualbox.guest = {
     enable = inVBox;
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = if isLatam then "latam" else "us";
   };
 
   # Fonts

@@ -15,5 +15,7 @@
     ./terminals/wal/wal.nix
     # IDEs
     ./ide/vscode/vscode.nix
+    # wayland
+    ./wayland/hyprland/hyprland.nix
   ];
 }

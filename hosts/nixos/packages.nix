@@ -17,7 +17,7 @@ with pkgs; [
   zsh
   oh-my-zsh
   pcmanfm
-  rofi
+  rofi-wayland
   gh
   jq
   discord
@@ -41,4 +41,7 @@ with pkgs; [
   playerctl
   light
   acpi
+  waybar
+  grim slurp # screenshots
+  wl-clipboard
 ]
