@@ -9,6 +9,7 @@
     shellAliases = {
       # browse
       rebuild = "sudo nixos-rebuild switch --flake ~/Dotfiles";
+      collect = "sudo nix-collect-garbage -d";
     };
 
     initContent = ''

@@ -52,6 +52,9 @@ in
   services.xserver = {
     enable = true;
     windowManager.qtile.enable = true;
+    resolutions = [
+      { x = 1600; y = 900; }
+    ];
     displayManager.sessionCommands = ''
       xwallpaper --maximize ~/Dotfiles/wallpapers/${wallpaper}
       xset r rate 200 35 &

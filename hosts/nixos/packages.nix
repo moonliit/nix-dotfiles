@@ -13,7 +13,6 @@ with pkgs; [
   fastfetch
   hyfetch
   starship
-  wallust
   pywal
   zsh
   oh-my-zsh
