@@ -11,7 +11,9 @@
         ms-vscode.cpptools
         rust-lang.rust-analyzer
       ];
-      userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
+      userSettings = {};
     };
   };
+  # symlink
+  xdg.configFile."Code/User/settings.json".source = ./settings.jsonc;
 }
