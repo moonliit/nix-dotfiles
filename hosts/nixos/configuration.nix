@@ -34,6 +34,18 @@ in
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+ 
+  # Greeter
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "Hyprland";
+	user = "moonliit";
+      };
+      default_session = initial_session;
+    };
+  };
 
   # Networking
   networking.networkmanager.enable = true;

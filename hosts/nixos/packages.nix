@@ -44,4 +44,5 @@ with pkgs; [
   waybar
   grim slurp # screenshots
   wl-clipboard
+  hyprlock
 ]

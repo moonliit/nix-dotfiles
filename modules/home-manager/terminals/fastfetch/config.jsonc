@@ -104,13 +104,13 @@
 				"key": "│ ├ WM"
 			},
 			{
-				"type": "gpu",
-				"key": "│ ├󰍛 GPU Driver",
-				"format": "{3}"
+				"type": "wmtheme",
+				"key": "│ ├󰉼 Theme"
 			},
 			{
-				"type": "wmtheme",
-				"key": "└ └󰉼 Theme"
+				"type": "gpu",
+				"key": "└ └󰍛 GPU Driver",
+				"format": "{3}"
 			},
 
 		{

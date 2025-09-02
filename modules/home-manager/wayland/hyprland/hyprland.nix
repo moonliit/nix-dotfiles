@@ -1,25 +1,33 @@
 { config, pkgs, ... }:
 
+let
+  isLatam = false;
+in
 {
-  # Enable Hyprland in Home Manager
   wayland.windowManager.hyprland = {
     enable = true;
 
     settings = {
-      # Set monitor resolution (replace HDMI-A-1 with your monitor name from `hyprctl monitors`)
       monitor = [
-        "Monitor eDP-1, 1920x1200@60, 0x0, 1"
+        "eDP-1, 1920x1200@60, 0x0, 1.0"
+      ];
+
+      exec-once = [
+        "hyprlock || hyprctl dispatch exit"
       ];
 
       # Input settings
       input = {
-        kb_layout = "us"; # change if you need another keyboard layout
-        follow_mouse = 1; # focus windows under mouse
+	kb_layout = if isLatam then "latam" else "us";
+        repeat_delay = 200;
+	repeat_rate = 35;
+	follow_mouse = 1; # focus windows under mouse
         touchpad = {
           natural_scroll = true;
           tap-to-click = true;
+	  scroll_factor = 1;
         };
-        sensitivity = 0; # 0 = default
+        sensitivity = 0.7; # 0 = default
       };
 
       # General window management
@@ -34,8 +42,8 @@
       # Keybindings
       bind = [
         "SUPER, RETURN, exec, kitty"   # Terminal
-        "SUPER, D, exec, rofi -show drun" # App launcher
-        "SUPER, Q, killactive"            # Close window
+        "SUPER, R, exec, rofi -show drun" # App launcher
+        "SUPER, W, killactive"            # Close window
         "SUPER SHIFT, E, exit"            # Exit Hyprland
         "SUPER, F, fullscreen"            # Toggle fullscreen
         "SUPER, 1, workspace, 1"
