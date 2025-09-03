@@ -19,7 +19,7 @@
         "clock" = {
 	  interval = 60;
 	  format = "{:%d %b %Y | %I:%M %p}";
-	  tooltip-format = "<tt><big>{calendar}</big></tt>";
+          tooltip-format = "<tt><big>{calendar}</big></tt>";
 	};
 
         # PipeWire audio (waybar still uses "pulseaudio" module, but it talks to PipeWire)

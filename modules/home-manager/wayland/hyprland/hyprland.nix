@@ -14,8 +14,26 @@ in
       ];
 
       exec-once = [
-        "hyprlock || hyprctl dispatch exit"
-	"hyprpaper"
+        "hyprpaper"
+	"hyprlock || hyprctl dispatch exit"
+      ];
+
+      # Animations
+      animations = {
+        enabled = true;
+	bezier = [ "myBezier, 0.05, 0.9, 0.1, 1.05" ];
+        animation = [
+          "windows, 1, 5, myBezier"
+          "border, 1, 10, default"
+          "fade, 1, 5, default"
+          "workspaces, 1, 3, default" # <-- workspace switch animation
+        ];
+        # duration is in tenths of ms steps (so lower = faster)
+        # If "3" feels too slow, try "1" or "2"
+      };
+
+      workspace = [
+        "1" "2" "3"
       ];
 
       # Input settings
@@ -37,7 +55,7 @@ in
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgba(89b4faee)";  # catppuccin-ish
+        "col.active_border" = "rgb(9a59cf)";  # catppuccin-ish
         "col.inactive_border" = "rgba(1e1e2eee)";
       };
 
@@ -48,7 +66,10 @@ in
         "SUPER, W, killactive"            # Close window
         "SUPER SHIFT, E, exit"            # Exit Hyprland
         "SUPER, F, fullscreen"            # Toggle fullscreen
-        "SUPER, 1, workspace, 1"
+        # Workspaces
+	"SUPER, LEFT, workspace, m-1"
+	"SUPER, RIGHT, workspace, m+1"
+	"SUPER, 1, workspace, 1"
         "SUPER, 2, workspace, 2"
         "SUPER, 3, workspace, 3"
         "SUPER SHIFT, 1, movetoworkspace, 1"

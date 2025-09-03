@@ -9,6 +9,26 @@ window#waybar {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+#workspaces button {
+  padding: 0px 4px;
+  margin: 2px;
+  border-radius: 6px;
+  background: #44475a;
+  color: #f8f8f2;
+}
+#workspaces button.active {
+  background: #9a59cf;
+  color: #ffffff;
+}
+#workspaces button.urgent {
+  background: #ff5555;
+  color: #ffffff;
+}
+#workspaces button:hover {
+  background: #6272a4;
+}
+
 #clock {
   color: #ffcc00;
 }
@@ -33,6 +53,13 @@ window#waybar {
 #custom-powermenu {
   color: #ffffff;
   margin-right: 20px;
+}
+
+tooltip {
+  background-color: #1e1e2e;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 8px;
 }
 
 /* space each module container */
