@@ -1,0 +1,58 @@
+* {
+  font-family: "0xProto Nerd Font";
+  font-size: 16px;
+  background: transparent;
+}
+window#waybar {
+  background-color: #1e1e2e;
+  border-bottom: 2px solid #9a59cf;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#clock {
+  color: #ffcc00;
+}
+#pulseaudio {
+  color: #00c3ff;
+}
+#backlight {
+  color: #f58d51;
+}
+#battery {
+  color: #ffffff
+}
+#battery.charging {
+  color: #00ff00;
+}
+#battery.critical {
+  color: #ff0000;
+}
+#network {
+  color: #16a2ff;
+}
+#custom-powermenu {
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+/* space each module container */
+.modules-left > *,
+.modules-center > *,
+.modules-right > * {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* also ensure the inner widget gets padding (covers modules that wrap children) */
+.modules-left > * > *,
+.modules-center > * > *,
+.modules-right > * > * {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* tweak tray specifically (tray often needs extra gap) */
+#tray {
+  padding-left: 10px;
+  padding-right: 10px;
+}

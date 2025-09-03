@@ -2,6 +2,7 @@
 
 let
   isLatam = false;
+  wallpaper = "oneshot.jpg";
 in
 {
   wayland.windowManager.hyprland = {
@@ -14,6 +15,7 @@ in
 
       exec-once = [
         "hyprlock || hyprctl dispatch exit"
+	"hyprpaper"
       ];
 
       # Input settings
@@ -55,4 +57,9 @@ in
       ];
     };
   };
+
+  home.file.".config/hypr/hyprpaper.conf".text = ''
+    preload = ~/Dotfiles/wallpapers/${wallpaper}
+    wallpaper = ,~/Dotfiles/wallpapers/${wallpaper}
+  '';
 }

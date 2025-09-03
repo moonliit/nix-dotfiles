@@ -8,7 +8,6 @@ with pkgs; [
   btop
   gedit
   bat
-  xwallpaper
   git
   fastfetch
   hyfetch
@@ -45,4 +44,6 @@ with pkgs; [
   grim slurp # screenshots
   wl-clipboard
   hyprlock
+  hyprpaper
+  wlogout
 ]
