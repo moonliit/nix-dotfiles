@@ -2,7 +2,7 @@
 
 let
   isLatam = false;
-  wallpaper = "oneshot.jpg";
+  wallpaper = "oneshot-reflection.jpg";
 in
 {
   wayland.windowManager.hyprland = {

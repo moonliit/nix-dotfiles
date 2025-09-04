@@ -3,7 +3,6 @@
 let
   inVBox = false;
   isLatam = false;
-  wallpaper = "oneshot.jpg";
 in
 {
   imports = [
