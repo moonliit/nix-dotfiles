@@ -5,17 +5,37 @@
     enable = true;
     layout = [
       {
-        label = "Suspend";
-        action = "${pkgs.hyprlock}/bin/hyprlock & systemctl suspend";
-        text = "Suspend";
-        keybind = "s";
+        label = "lock";
+        action = "hyprlock";
+        text = "Lock";
       }
       {
-        label = "Lock";
-        action = "${pkgs.hyprlock}/bin/hyprlock";
-        text = "Lock";
-        keybind = "l";
+        label = "logout";
+        action = "hyprctl dispatch exit";
+        text = "Logout";
+      }
+      {
+        label = "suspend";
+        action = "systemctl suspend";
+        text = "Suspend";
+      }
+      {
+        label = "hibernate";
+        action = "systemctl hibernate";
+        text = "Hibernate";
+      }
+      {
+        label = "reboot";
+        action = "systemctl reboot";
+        text = "Reboot";
+      }
+      {
+        label = "shutdown";
+        action = "systemctl poweroff";
+        text = "Shutdown";
       }
     ];
+
+    style = import ./style.css;
   };
 }

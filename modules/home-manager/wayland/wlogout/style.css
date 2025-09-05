@@ -1,0 +1,38 @@
+window {
+    font-family: "0xProto Nerd Font";
+    font-size: 18px;
+    background-color: rgba(30, 30, 46, 0.9);
+}
+
+button {
+    background-size: 48px;
+    background-repeat: no-repeat;
+    background-position: center 20px;
+    min-width: 100px;
+    min-height: 100px;
+    margin: 20px;
+}
+
+button#lock {
+    background-image: url("${pkgs.wlogout}/share/wlogout/icons/lock.png");
+}
+
+button#logout {
+    background-image: url("${pkgs.wlogout}/share/wlogout/icons/logout.png");
+}
+
+button#suspend {
+    background-image: url("${pkgs.wlogout}/share/wlogout/icons/suspend.png");
+}
+
+button#hibernate {
+    background-image: url("${pkgs.wlogout}/share/wlogout/icons/hibernate.png");
+}
+
+button#reboot {
+    background-image: url("${pkgs.wlogout}/share/wlogout/icons/reboot.png");
+}
+
+button#shutdown {
+    background-image: url("${pkgs.wlogout}/share/wlogout/icons/shutdown.png");
+}
