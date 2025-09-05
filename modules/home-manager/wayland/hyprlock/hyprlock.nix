@@ -1,45 +1,75 @@
 { config, pkgs, ... }:
 
 let
-  wallpaper = "ena.jpg";
+  background = "oneshot-navigate.jpg";
+  avatar = "shift.jpg";
 in
 {
   programs.hyprlock = {
     enable = true;
-
     settings = {
-      # Background image (optional, can also be a solid color)
-      general = {
-        background = "~/Dotfiles/wallpapers/${wallpaper}";
-        blur_size = 4;
-        blur_passes = 3;
-        dim_strength = 0.4;
+      # Background with blur
+      background = [
+        {
+          monitor = "";
+          path = "~/Dotfiles/wallpapers/${background}";
+          blur_passes = 2;
+          blur_size = 7;
+          noise = 0.01;
+        }
+      ];
+
+      # Time label
+      label = [
+        {
+          monitor = "";
+          text = "$TIME";
+          color = "rgba(242,243,244,0.9)";
+          font_size = 80;
+          font_family = "JetBrains Mono";
+          position = "0, 200";
+          halign = "center";
+          valign = "center";
+        }
+        {
+          monitor = "";
+          text = ''cmd[update:1000] date +"%a, %d %b %Y"'';
+          color = "rgba(242,243,244,0.75)";
+          font_size = 24;
+          font_family = "JetBrains Mono";
+          position = "0, 140";
+          halign = "center";
+          valign = "center";
+        }
+      ];
+
+      # User avatar
+      image = {
+        monitor = "";
+        path = "~/Dotfiles/avatars/${avatar}";
+        size = 128;
+        position = "0, 40";
+        halign = "center";
+        valign = "center";
       };
 
-      # Input field
+      # Password input
       input-field = {
-        size = "250, 50";
+        monitor = "";
+        size = "220, 50";
+        outline_thickness = 2;
+        inner_color = "rgba(0,0,0,0.4)";
+        outer_color = "rgba(255,255,255,0.2)";
+        font_color = "rgb(255,255,255)";
+        placeholder_text = ''<i><span foreground="##cccccc">Enter password...</span></i>'';
+        rounding = 8;
         position = "0, -100";
-        rounding = 12;
-        inner_color = "rgba(30, 30, 46, 0.8)";
-        outer_color = "rgba(0, 0, 0, 0.8)";
-        font_color  = "rgba(255, 255, 255, 1.0)";
+        halign = "center";
+        valign = "center";
       };
 
-      # Clock example
-      label = {
-        text = "cmd[update:1000] date '+%H:%M'";
-        position = "0, -200";
-        font_size = 48;
-        font_color = "rgba(255, 255, 255, 1.0)";
-      };
-
-      # User info
-      user = {
-        show_avatar = true;
-        font_size = 20;
-        position = "0, 150";
-        font_color = "rgba(255, 255, 255, 1.0)";
+      general = {
+        auth_method = "pam";
       };
     };
   };

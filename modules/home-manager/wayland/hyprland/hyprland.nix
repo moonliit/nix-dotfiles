@@ -16,6 +16,7 @@ in
       exec-once = [
         "hyprpaper"
 	"hyprlock || hyprctl dispatch exit"
+	"sleep 1 && waybar"
       ];
 
       # Animations
@@ -66,7 +67,8 @@ in
         "SUPER, W, killactive"            # Close window
         "SUPER SHIFT, E, exit"            # Exit Hyprland
         "SUPER, F, fullscreen"            # Toggle fullscreen
-        # Workspaces
+        "SUPER SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy" # Screenshot
+	# Workspaces
 	"SUPER, LEFT, workspace, m-1"
 	"SUPER, RIGHT, workspace, m+1"
 	"SUPER, 1, workspace, 1"

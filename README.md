@@ -1,2 +1,2 @@
 TODO:
-- customize hyprlock (it looks kinda bad honestly)
+- get some more tooling packages ig

@@ -8,6 +8,7 @@
       {
         layer = "top";
         position = "top";
+        exclusive = true;
         height = 35;
 
         # Layout: left | center | right

@@ -68,9 +68,9 @@ in
   # Enable seatd (for seat/session management in Wayland)
   services.seatd.enable = true;
 
+  # Enable hyprland
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
-  programs.waybar.enable = true;
 
   # Libinput settings for touchpad support
   services.libinput = {

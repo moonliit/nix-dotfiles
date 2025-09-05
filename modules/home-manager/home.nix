@@ -17,6 +17,7 @@
     ./ide/vscode/vscode.nix
     # wayland
     ./wayland/hyprland/hyprland.nix
+    ./wayland/hyprlock/hyprlock.nix
     ./wayland/waybar/waybar.nix
   ];
 }
