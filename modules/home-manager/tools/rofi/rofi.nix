@@ -6,6 +6,7 @@ in
 {
   programs.rofi = {
     enable = true;
+    package = pkgs.rofi-wayland;
     theme = "~/Dotfiles/modules/home-manager/tools/rofi/themes/${rofiTheme}";
   };
 }

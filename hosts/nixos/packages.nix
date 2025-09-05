@@ -46,4 +46,5 @@ with pkgs; [
   hyprlock
   hyprpaper
   wlogout
+  yazi
 ]

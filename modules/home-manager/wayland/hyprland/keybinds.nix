@@ -1,11 +1,11 @@
 { pkgs, ... }:
 
 [
-  "SUPER, RETURN, exec, kitty"      # Terminal
-  "SUPER, R, exec, rofi -show drun" # App launcher
-  "SUPER, TAB, cyclenext"           # Window switch
-  "SUPER, W, killactive"            # Close window
-  "SUPER, F, fullscreen"            # Toggle fullscreen
+  "SUPER, RETURN, exec, kitty" # Terminal
+  "SUPER, R, exec, rofi -show drun -show-icons" # App launcher
+  "SUPER, TAB, cyclenext" # Window switch
+  "SUPER, W, killactive" # Close window
+  "SUPER, F, fullscreen" # Toggle fullscreen
   "SUPER SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy" # Screenshot
   # Workspaces
   "SUPER, LEFT, workspace, m-1"
