@@ -36,6 +36,6 @@
       }
     ];
 
-    style = import ./style.css;
+    style = builtins.readFile ./style.css;
   };
 }

@@ -14,25 +14,25 @@ button {
 }
 
 button#lock {
-    background-image: url("${pkgs.wlogout}/share/wlogout/icons/lock.png");
+    background-image: url("icons/lock.png");
 }
 
 button#logout {
-    background-image: url("${pkgs.wlogout}/share/wlogout/icons/logout.png");
+    background-image: url("icons/logout.png");
 }
 
 button#suspend {
-    background-image: url("${pkgs.wlogout}/share/wlogout/icons/suspend.png");
+    background-image: url("icons/suspend.png");
 }
 
 button#hibernate {
-    background-image: url("${pkgs.wlogout}/share/wlogout/icons/hibernate.png");
+    background-image: url("icons/hibernate.png");
 }
 
 button#reboot {
-    background-image: url("${pkgs.wlogout}/share/wlogout/icons/reboot.png");
+    background-image: url("icons/reboot.png");
 }
 
 button#shutdown {
-    background-image: url("${pkgs.wlogout}/share/wlogout/icons/shutdown.png");
+    background-image: url("icons/shutdown.png");
 }
