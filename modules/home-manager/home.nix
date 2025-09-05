@@ -19,5 +19,7 @@
     ./wayland/hyprland/hyprland.nix
     ./wayland/hyprlock/hyprlock.nix
     ./wayland/waybar/waybar.nix
+    # tools
+    ./tools/rofi/rofi.nix
   ];
 }

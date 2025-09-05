@@ -61,7 +61,7 @@ in
       };
 
       # Keybindings
-      bind = import ./keybinds.nix;
+      bind = import ./keybinds.nix { inherit pkgs; };
     };
   };
 
