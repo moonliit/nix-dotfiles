@@ -19,7 +19,7 @@ with pkgs; [
   rofi-wayland
   gh
   jq
-  discord
+  (discord.override { withVencord = true; })
   docker
   zoom-us
   vscode-fhs
