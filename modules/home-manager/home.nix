@@ -24,6 +24,6 @@
     ./tools/rofi/rofi.nix
     ./tools/swayosd/swayosd.nix
     # apps
-    ./apps/vencord/vencord.nix
+    ./apps/nixcord/nixcord.nix
   ];
 }
