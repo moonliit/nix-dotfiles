@@ -13,10 +13,11 @@ in
         ms-python.python
         ms-vscode.cpptools
         rust-lang.rust-analyzer
+        jnoortheen.nix-ide
 
-	# Themes
+        # Themes
         zhuangtongfa.material-theme
-	pkief.material-icon-theme
+        pkief.material-icon-theme
         customExtensions.prideTheme
       ];
       userSettings = {};

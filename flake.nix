@@ -8,6 +8,8 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixcord.url = "github:kaylorben/nixcord";
   };
 
   outputs = { self, nixpkgs, ... } @ inputs:
@@ -20,7 +22,17 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/nixos/configuration.nix
-        inputs.home-manager.nixosModules.default
+        inputs.home-manager.nixosModules.default {
+          # home-manager settings
+	  home-manager.useGlobalPkgs = true;
+	  home-manager.useUserPackages = true;
+	  home-manager.users.moonliit = import ./modules/home-manager/home.nix;
+
+          # Shared home-manager modules
+	  home-manager.sharedModules = [
+            inputs.nixcord.homeModules.nixcord
+	  ];
+	}
       ];
     };
   };
