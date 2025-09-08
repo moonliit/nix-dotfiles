@@ -3,6 +3,7 @@
 {
   services.swayosd = {
     enable = true;
-    stylePath = "~/Dotfiles/modules/home-manager/tools/swayosd/style.css"; 
+    stylePath = "/home/moonliit/Dotfiles/modules/home-manager/tools/swayosd/style.css";
   };
+  xdg.configFile."swayosd/themes/theme.css".source = ./style.css;
 }
