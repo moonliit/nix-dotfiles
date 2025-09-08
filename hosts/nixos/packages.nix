@@ -46,5 +46,7 @@ with pkgs; [
   hyprlock
   hyprpaper
   wlogout
-  yazi
+  wev
+  yazi fzf
+  iwd impala
 ]
