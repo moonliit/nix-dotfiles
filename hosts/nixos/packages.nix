@@ -38,7 +38,7 @@ with pkgs; [
   pamixer
   qpwgraph
   playerctl
-  light
+  brightnessctl
   acpi
   waybar
   grim slurp # screenshots
@@ -49,4 +49,5 @@ with pkgs; [
   wev
   yazi fzf
   iwd impala
+  swayosd
 ]

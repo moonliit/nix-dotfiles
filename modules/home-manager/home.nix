@@ -22,5 +22,6 @@
     ./wayland/wlogout/wlogout.nix
     # tools
     ./tools/rofi/rofi.nix
+    ./tools/swayosd/swayosd.nix
   ];
 }
