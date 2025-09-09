@@ -13,8 +13,7 @@
     ./terminals/fastfetch/fastfetch.nix
     ./terminals/hyfetch/hyfetch.nix
     ./terminals/wal/wal.nix
-    # IDEs
-    ./ide/vscode/vscode.nix
+    ./terminals/nixowos/nixowos.nix
     # wayland
     ./wayland/hyprland/hyprland.nix
     ./wayland/hyprlock/hyprlock.nix
@@ -25,6 +24,7 @@
     ./tools/rofi/rofi.nix
     ./tools/swayosd/swayosd.nix
     # apps
+    ./apps/vscode/vscode.nix
     ./apps/nixcord/nixcord.nix
   ];
 }

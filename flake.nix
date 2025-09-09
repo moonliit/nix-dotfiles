@@ -8,8 +8,10 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    
+    # Extra packages
     nixcord.url = "github:kaylorben/nixcord";
+    nixowos.url = "github:yunfachi/nixowos";
   };
 
   outputs = { self, nixpkgs, ... } @ inputs:
@@ -31,6 +33,7 @@
           # Shared home-manager modules
 	  home-manager.sharedModules = [
             inputs.nixcord.homeModules.nixcord
+	    inputs.nixowos.homeModules.default
 	  ];
 	}
       ];
