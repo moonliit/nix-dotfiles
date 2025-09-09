@@ -43,11 +43,17 @@ with pkgs; [
   waybar
   grim slurp # screenshots
   wl-clipboard
+  cliphist
+  mpv
   hyprlock
   hyprpaper
+  hypridle
+  hyprpicker
   wlogout
   wev
   yazi fzf
   iwd impala
+  gitui
   swayosd
+  swaynotificationcenter
 ]

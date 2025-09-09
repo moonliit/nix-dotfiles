@@ -18,6 +18,7 @@
     # wayland
     ./wayland/hyprland/hyprland.nix
     ./wayland/hyprlock/hyprlock.nix
+    ./wayland/hypridle/hypridle.nix
     ./wayland/waybar/waybar.nix
     ./wayland/wlogout/wlogout.nix
     # tools

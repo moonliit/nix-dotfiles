@@ -14,13 +14,22 @@
 
     config = {
       useQuickCss = true;
+      
       plugins = {
-        hideAttachments.enable = true;
-        ignoreActivities = {
-          enable = true;
-          ignorePlaying = true;
-        };
+        betterGifPicker.enable = true;
+        blurNSFW.enable = true;
+        callTimer.enable = true;
+	crashHandler.enable = true;
+	disableCallIdle.enable = true;
+	fakeNitro.enable = true;
       };
-    }
+    
+      themeLinks = [
+        "https://catppuccin.github.io/discord/dist/catppuccin-macchiato.theme.css"
+        "https://catppuccin.github.io/discord/dist/catppuccin-frappe.theme.css"
+        "https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css"
+      ];
+
+    };
   };
 }

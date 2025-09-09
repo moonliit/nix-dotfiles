@@ -47,7 +47,8 @@ in
   };
 
   # Networking
-  networking.networkmanager.enable = true;
+  networking.wireless.iwd.enable = true;
+  networking.networkmanager.enable = false;
 
   # Set your time zone.
   time.timeZone = "America/Lima";
