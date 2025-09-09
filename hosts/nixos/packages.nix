@@ -17,6 +17,7 @@ with pkgs; [
   oh-my-zsh
   pcmanfm
   rofi-wayland
+  nil
   gh
   jq
   discord
@@ -53,6 +54,7 @@ with pkgs; [
   wev
   yazi fzf
   iwd impala
+  zoxide
   gitui
   swayosd
   swaynotificationcenter

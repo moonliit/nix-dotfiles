@@ -14,7 +14,10 @@
         "*.sdb": "${capture}.${extname}-*",
         "*.s3db": "${capture}.${extname}-*"
     },
+    
     "C_Cpp.default.compilerPath": "",
+    "nix.serverPath": "nil",
+
     "workbench.colorTheme": "Non-binary (Dark)",
     "workbench.iconTheme": "material-icon-theme",
     

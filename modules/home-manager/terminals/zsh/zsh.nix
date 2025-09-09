@@ -14,6 +14,7 @@
 
     initContent = ''
       hyfetch
+      eval "$(zoxide init zsh)"
     '';
   };
 
