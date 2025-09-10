@@ -2,8 +2,9 @@
 
 with pkgs; [
   vim
-  wget
   neovim
+  helix
+  wget
   kitty
   btop
   gedit
@@ -21,6 +22,7 @@ with pkgs; [
   gh
   jq
   discord
+  zapzap
   docker
   zoom-us
   vscode-fhs

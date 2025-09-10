@@ -59,6 +59,11 @@
 	  tooltip = false;
 	  on-click = "wlogout -b 3 -T 200 -B 200";
 	};
+
+	# Tray
+	"tray" = {
+          spacing = 10;
+	};
       }
     ];
 

@@ -73,6 +73,9 @@ in
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
 
+  # :3
+  nixowos.enable = true;
+
   # Libinput settings for touchpad support
   services.libinput = {
     enable = true;

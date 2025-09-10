@@ -36,6 +36,7 @@
 	    inputs.nixowos.homeModules.default
 	  ];
 	}
+	inputs.nixowos.nixosModules.default
       ];
     };
   };

@@ -10,6 +10,20 @@ window#waybar {
   padding-bottom: 10px;
 }
 
+/* menu popup items */
+menu {
+  background-color: #1e1e2e; /* solid dark background */
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 6px;
+}
+menuitem {
+  padding: 6px 12px;
+}
+menuitem:hover {
+  background-color: #44475a;
+}
+
 #workspaces button {
   padding: 0px 4px;
   margin: 2px;
@@ -82,4 +96,8 @@ tooltip {
 #tray {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#tray > * {
+  margin: 0 10px;
 }
