@@ -18,14 +18,14 @@
 
         # Clock
         "clock" = {
-	  interval = 60;
-	  format = "{:%d %b %Y | %I:%M %p}";
+          interval = 60;
+          format = "{:%d %b %Y | %I:%M %p}";
           tooltip-format = "<tt><big>{calendar}</big></tt>";
-	};
+        };
 
         # PipeWire audio (waybar still uses "pulseaudio" module, but it talks to PipeWire)
         "pulseaudio" = {
-          format = "{volume}% {icon}";
+          format = "{icon} {volume}%";
           format-muted = "{volume}% 󰝟";
           format-icons = [ "" "" "" ];
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
@@ -33,40 +33,39 @@
 
         # Brightness (via light)
         "backlight" = {
-          format = "{percent}% ";
+          format = " {percent}%";
           interval = 2;
         };
 
         # Battery
         "battery" = {
-          format = "{capacity}% {icon}";
-          format-charging = "{capacity}%  {icon}";
+          format = "{icon} {capacity}%";
+          format-charging = "{icon}  {capacity}%";
           format-icons = [ "" "" "" "" "" ];
         };
 
         # Network
         "network" = {
-          format-wifi = " {essid}";
-          format-ethernet = "󰈁 {ipaddr}";
+          format-wifi = "  {essid}";
+          format-ethernet = "󰈁  {ipaddr}";
           format-disconnected = "";
           interval = 5;
-	  on-click = "kitty -e impala";
+          on-click = "kitty -e impala";
         };
 
-	# Custom power menu
-	"custom/powermenu" = {
+        # Custom power menu
+        "custom/powermenu" = {
           format = "⏻";
-	  tooltip = false;
-	  on-click = "wlogout -b 3 -T 200 -B 200";
-	};
+          tooltip = false;
+          on-click = "wlogout -b 3 -T 200 -B 200";
+        };
 
-	# Tray
-	"tray" = {
+        # Tray
+        "tray" = {
           spacing = 10;
-	};
+        };
       }
     ];
-
     style = builtins.readFile ./style.css;
   };
 }

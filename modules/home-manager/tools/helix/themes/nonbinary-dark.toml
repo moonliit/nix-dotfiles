@@ -1,0 +1,39 @@
+# A Helix theme inspired by your VS Code "Non-binary (Dark)" setup
+
+inherits = "default" # base theme
+
+[palette]
+cursor      = "#ffcc00"  # cursor yellow
+selection   = "#44475a"  # selection gray
+comment     = "#50fa7b"  # green comments
+keyword     = "#ea00ff"  # magenta/purple
+operator    = "#00ffbf"  # teal
+string      = "#f58d51"  # orange strings
+number      = "#eb55ff"  # pink/purple numbers
+variable    = "#b0fafa"  # cyan-like
+constant    = "#16a2ff"  # bright blue
+function    = "#ffcc00"  # yellow
+type        = "#00ffbf"  # teal
+namespace   = "#00fff2"  # aqua
+entity      = "#ea00ff"  # magenta entities
+background  = "#1e1e1e"  # dark gray background
+statusline  = "#1e1e1e"  # status bar bg
+statusline_text = "#9a59cf" # status bar fg (purple)
+
+[ui]
+cursor = { fg = "cursor", modifiers = ["reversed"] }
+selection = { bg = "selection" }
+statusline = { bg = "statusline", fg = "statusline_text" }
+
+[syntax]
+comment = { fg = "comment", modifiers = ["italic", "bold"] }
+keyword = { fg = "keyword" }
+operator = { fg = "operator" }
+string = { fg = "string" }
+number = { fg = "number" }
+variable = { fg = "variable" }
+constant = { fg = "constant" }
+function = { fg = "function" }
+type = { fg = "type" }
+namespace = { fg = "namespace" }
+entity = { fg = "entity" }
