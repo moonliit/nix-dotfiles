@@ -1,39 +1,96 @@
-# A Helix theme inspired by your VS Code "Non-binary (Dark)" setup
+inherits = "default"
 
-inherits = "default" # base theme
+# UI elements (fully opaque hexes)
+"ui.background" = { bg = "#2f1f31ff" }
+"ui.cursor" = { fg = "#15151a", bg = "#e4bc1eb9" }
+"ui.cursor.normal" = "#ffcc00"
+"ui.cursor.insert" = "#ffcc00"
+"ui.selection" = { bg = "#2f4f73", fg = "#ffffff" }         # visually 'transparent' blue look
+"ui.selection.primary" = { bg = "#355b87", fg = "#ffffff" }
+"ui.statusline" = { fg = "#ffffff", bg = "#8a4bbf" }        # purple bg, white text
+"ui.statusline.inactive" = { fg = "#b08ad1", bg = "#17131a" }
+"ui.statusline.normal" = { fg = "#b08ad1", bg = "#17131a" }
+"ui.statusline.insert" = { fg = "#1b1020", bg = "#f0bf00" } # insert indicator (yellow bg)
+"ui.statusline.select" = { fg = "#ffffff", bg = "#2a2130" }
+"ui.statusline.separator" = "#b08ad1"
+"ui.gutter" = "#15151a"
+"ui.linenr" = "#6e6e76"
+"ui.linenr.selected" = "#ebebeb"
+"ui.text" = "#9fd6d8"
+"ui.text.inactive" = "#7aaeb0"
+"ui.popup" = "#9fd6d8"
+"ui.virtual.indent-guide" = "#262629"
+
+# Syntax / Tree-sitter scopes
+"comment" = { fg = "#15f371", modifiers = ["italic"] }
+"comment.line" = "#15f371"
+"comment.block" = "#15f371"
+"comment.block.documentation" = { fg = "#15f371", modifiers = ["italic"] }
+
+"string" = "#e07a4a"
+"string.regexp" = "#e07a4a"
+"string.special" = "#e07a4a"
+
+# numbers / constants
+"constant.numeric" = "#c97fcf"
+"constant.character" = "#c97fcf"
+"constant.builtin" = "#4ea1e6"
+
+# primitives & types (cover common grammar scope names)
+"type" = "#33caa0"
+"type.builtin" = "#4ea1e6"
+"type.storage" = "#4ea1e6"
+"keyword.storage" = "#4ea1e6"
+
+# enums / token-like constants
+"constant" = "#4ea1e6"
+"constant.other" = "#4ea1e6"
+"type.enum" = "#4ea1e6"
+"type.enum.variant" = "#4ea1e6"
+"variable.other.member" = "#4ea1e6"
+
+"namespace" = "#3fe2d4"
+
+"keyword" = "#b25db0"
+"keyword.control.conditional" = "#b25db0"
+"keyword.control.repeat" = "#b25db0"
+"keyword.directive" = "#b25db0"
+
+"operator" = "#33caa0"
+"punctuation" = "#9fd6d8"
+
+"function" = "#f0bf00"
+"function.builtin" = "#f0bf00"
+"function.method" = "#f0bf00"
+
+"variable" = "#9fd6d8"
+"variable.other" = "#9fd6d8"
+"variable.parameter" = "#9fd6d8"
+
+"markup.heading" = "#f0bf00"
+"markup.list" = "#9fd6d8"
+"markup.link.url" = "#3fe2d4"
+
+# Diagnostics / gutter
+"error" = { fg = "#ff6b6b", bg = "#15151a" }
+"warning" = { fg = "#e0a86e", bg = "#15151a" }
+"info" = { fg = "#4ea1e6", bg = "#15151a" }
+"hint" = { fg = "#8fdbe6", bg = "#15151a" }
 
 [palette]
-cursor      = "#ffcc00"  # cursor yellow
-selection   = "#44475a"  # selection gray
-comment     = "#50fa7b"  # green comments
-keyword     = "#ea00ff"  # magenta/purple
-operator    = "#00ffbf"  # teal
-string      = "#f58d51"  # orange strings
-number      = "#eb55ff"  # pink/purple numbers
-variable    = "#b0fafa"  # cyan-like
-constant    = "#16a2ff"  # bright blue
-function    = "#ffcc00"  # yellow
-type        = "#00ffbf"  # teal
-namespace   = "#00fff2"  # aqua
-entity      = "#ea00ff"  # magenta entities
-background  = "#1e1e1e"  # dark gray background
-statusline  = "#1e1e1e"  # status bar bg
-statusline_text = "#9a59cf" # status bar fg (purple)
-
-[ui]
-cursor = { fg = "cursor", modifiers = ["reversed"] }
-selection = { bg = "selection" }
-statusline = { bg = "statusline", fg = "statusline_text" }
-
-[syntax]
-comment = { fg = "comment", modifiers = ["italic", "bold"] }
-keyword = { fg = "keyword" }
-operator = { fg = "operator" }
-string = { fg = "string" }
-number = { fg = "number" }
-variable = { fg = "variable" }
-constant = { fg = "constant" }
-function = { fg = "function" }
-type = { fg = "type" }
-namespace = { fg = "namespace" }
-entity = { fg = "entity" }
+cursor = "#ffcc00"
+selection = "#2f4f73"
+comment = "#49c07a"
+keyword = "#b25db0"
+operator = "#33caa0"
+string = "#e07a4a"
+number = "#c97fcf"
+variable = "#9fd6d8"
+constant = "#4ea1e6"
+function = "#f0bf00"
+type = "#33caa0"
+namespace = "#3fe2d4"
+entity = "#b25db0"
+background = "#2f1f31"
+statusline = "#8a4bbf"
+statusline_text = "#ffffff"

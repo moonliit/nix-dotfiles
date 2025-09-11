@@ -4,38 +4,28 @@ with pkgs; [
   vim
   neovim
   helix
+  librewolf
   wget
   kitty
   btop
   gedit
   bat
-  git
-  fastfetch
-  hyfetch
-  starship
-  pywal
-  zsh
-  oh-my-zsh
-  pcmanfm
+  git gh
+  fastfetch hyfetch
+  starship pywal
+  zsh oh-my-zsh
   rofi-wayland
   nil
-  gh
+  tree-sitter
   jq
   discord
   zapzap
-  docker
   zoom-us
+  docker
   vscode-fhs
   python312
-  gcc
-  gdb
-  clang
-  cmake
-  ninja
-  rustc
-  rustup
-  cargo
-  rust-analyzer
+  gcc gdb clang cmake ninja
+  rustc rustup cargo rust-analyzer
   pavucontrol
   helvum
   pamixer
@@ -44,10 +34,12 @@ with pkgs; [
   brightnessctl
   acpi
   waybar
-  grim slurp # screenshots
+  # Utilities
   wl-clipboard
   cliphist
+  grim slurp
   mpv
+  # Wayland stuff
   hyprlock
   hyprpaper
   hypridle
@@ -60,4 +52,9 @@ with pkgs; [
   gitui
   swayosd
   swaynotificationcenter
+  nur.repos.charmbracelet.crush
+  libreoffice
+  xournalpp
+  obsidian
+  texlive.combined.scheme-full
 ]

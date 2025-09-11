@@ -40,7 +40,7 @@ in
     settings = rec {
       initial_session = {
         command = "Hyprland";
-	user = "moonliit";
+        user = "moonliit";
       };
       default_session = initial_session;
     };

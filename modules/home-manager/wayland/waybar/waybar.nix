@@ -25,8 +25,8 @@
 
         # PipeWire audio (waybar still uses "pulseaudio" module, but it talks to PipeWire)
         "pulseaudio" = {
-          format = "{icon} {volume}%";
-          format-muted = "{volume}% 󰝟";
+          format = "{icon}  {volume}%";
+          format-muted = "󰝟 {volume}%";
           format-icons = [ "" "" "" ];
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
         };
