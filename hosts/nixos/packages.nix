@@ -18,6 +18,8 @@ with pkgs; [
   nil
   tree-sitter
   jq
+  cava
+  tty-clock
   discord
   zapzap
   zoom-us
