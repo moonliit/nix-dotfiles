@@ -5,6 +5,7 @@ with pkgs; [
   neovim
   helix
   librewolf
+  chromium
   wget
   kitty
   btop

@@ -19,12 +19,14 @@
         betterGifPicker.enable = true;
         blurNSFW.enable = true;
         callTimer.enable = true;
-	crashHandler.enable = true;
-	disableCallIdle.enable = true;
-	fakeNitro.enable = true;
+        crashHandler.enable = true;
+        disableCallIdle.enable = true;
+        fakeNitro.enable = true;
+        decor.enable = true;
       };
     
       themeLinks = [
+        "https://devevil99.github.io/devevil/BetterDiscordAddons/Theme/Dark%2B/Dark%2B-Default-Member-List.css"
         "https://catppuccin.github.io/discord/dist/catppuccin-macchiato.theme.css"
         "https://catppuccin.github.io/discord/dist/catppuccin-frappe.theme.css"
         "https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css"
