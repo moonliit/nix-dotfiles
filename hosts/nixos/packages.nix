@@ -2,7 +2,7 @@
 
 with pkgs; [
   vim
-  neovim
+  nvim-pkg
   helix
   unzip
   ripgrep

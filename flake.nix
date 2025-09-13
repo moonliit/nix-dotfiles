@@ -18,6 +18,11 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    kickstart-nvim = {
+      url = "github:nix-community/kickstart-nix.nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     # Extra packages
     nixcord.url = "github:kaylorben/nixcord";
@@ -56,6 +61,7 @@
           nixpkgs.overlays = [
             inputs.nur.overlays.default
             inputs.rust-overlay.overlays.default
+            inputs.kickstart-nvim.overlays.default
           ];
           # system pkgs
           environment.systemPackages = [
