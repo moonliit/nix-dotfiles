@@ -4,6 +4,11 @@ with pkgs; [
   vim
   neovim
   helix
+  unzip
+  ripgrep
+  fd
+  xclip
+  nix-prefetch-git
   librewolf
   chromium
   wget

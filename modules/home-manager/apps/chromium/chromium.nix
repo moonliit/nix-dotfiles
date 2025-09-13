@@ -6,7 +6,8 @@
 
     # Proctorio and other extensions
     extensions = [
-      "jjkchpdmjjdmalgembblgafllbpcjiei" # Proctorio
+      "gfolddmfcichcfnghdchbfgpmgodmkjd" # proctorio
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
     ];
   };
 }

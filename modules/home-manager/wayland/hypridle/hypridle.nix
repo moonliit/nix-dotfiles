@@ -12,12 +12,12 @@
 
             listener = [
                 {
-                    timeout = 300; # seconds (5 min)
+                    timeout = 600; # 10 min
                     on-timeout = "hyprlock"; # run when idle
                     on-resume = "";          # when resumed
                 }
                 {
-                    timeout = 600; # 10 min
+                    timeout = 900; # 15 min
                     on-timeout = "systemctl suspend";
                     on-resume = "";
                 }
