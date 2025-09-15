@@ -18,18 +18,14 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    
     kickstart-nixvim = {
       url = "github:JMartJonesy/kickstart.nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Extra packages
+    nixvim.url = "github:nix-community/nixvim";
     nixcord.url = "github:kaylorben/nixcord";
     nixowos.url = "github:yunfachi/nixowos";
   };
