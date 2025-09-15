@@ -19,11 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    kickstart-nvim = {
-      url = "github:nix-community/kickstart-nix.nvim";
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     # Extra packages
     nixcord.url = "github:kaylorben/nixcord";
     nixowos.url = "github:yunfachi/nixowos";
@@ -49,6 +49,7 @@
 
           # Shared home-manager modules
 	        home-manager.sharedModules = [
+            inputs.nixvim.homeModules.nixvim
             inputs.nixcord.homeModules.nixcord
 	          inputs.nixowos.homeModules.default
 	        ];
@@ -61,7 +62,6 @@
           nixpkgs.overlays = [
             inputs.nur.overlays.default
             inputs.rust-overlay.overlays.default
-            inputs.kickstart-nvim.overlays.default
           ];
           # system pkgs
           environment.systemPackages = [
