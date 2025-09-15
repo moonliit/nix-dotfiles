@@ -24,6 +24,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    kickstart-nixvim = {
+      url = "github:JMartJonesy/kickstart.nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Extra packages
     nixcord.url = "github:kaylorben/nixcord";
     nixowos.url = "github:yunfachi/nixowos";
@@ -44,16 +49,17 @@
         inputs.home-manager.nixosModules.default {
           # home-manager settings
           home-manager.useGlobalPkgs = true;
-	        home-manager.useUserPackages = true;
-	        home-manager.users.moonliit = import ./modules/home-manager/home.nix;
+          home-manager.useUserPackages = true;
+          home-manager.users.moonliit = import ./modules/home-manager/home.nix;
 
           # Shared home-manager modules
-	        home-manager.sharedModules = [
+          home-manager.sharedModules = [
+            #inputs.kickstart-nixvim.homeManagerModules.default
             inputs.nixvim.homeModules.nixvim
             inputs.nixcord.homeModules.nixcord
-	          inputs.nixowos.homeModules.default
-	        ];
-	      }
+            inputs.nixowos.homeModules.default
+          ];
+        }
         
         ({ config, pkgs, lib, ... }: {
           # allow unfree packages

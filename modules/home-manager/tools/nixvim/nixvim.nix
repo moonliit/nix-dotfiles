@@ -2,6 +2,12 @@
 
 {
   programs.nixvim = {
-	   enable = true;
-	};
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+
+    luaLoader.enable = true;
+    extraConfigLua = builtins.readFile ./main.lua;
+  };
 }
