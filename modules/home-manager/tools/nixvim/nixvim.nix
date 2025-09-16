@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  xdg.configFile."~/.config/nvim/colors/nonbinary-dark.lua".text =
+  # Themes
+  xdg.configFile."nvim/colors/nonbinary-dark.lua".text =
     builtins.readFile ./themes/nonbinary-dark.lua;
 
   programs.nixvim = {
@@ -32,6 +33,9 @@
           style = "night";
           styles.comments.italic = false;
         };
+      };
+      vscode = {
+        enable = true;
       };
     };
 
@@ -263,6 +267,7 @@
     extraConfigLuaPost = ''
       -- The line beneath this is called `modeline`. See `:help modeline`
       -- vim: ts=2 sts=2 sw=2 et
+      vim.cmd("colorscheme nonbinary-dark");
     '';
 
   };
