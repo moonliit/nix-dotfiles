@@ -15,27 +15,46 @@
 
     imports = [
       # Plugins
-      ./plugins/gitsigns.nix
-      ./plugins/which-key.nix
-      ./plugins/telescope.nix
-      ./plugins/lsp.nix
-      ./plugins/conform.nix
+      ./plugins/autopairs.nix
       ./plugins/blink-cmp.nix
-      ./plugins/todo-comments.nix
+      ./plugins/comment.nix
+      ./plugins/conform.nix
+      ./plugins/debug.nix
+      ./plugins/flash.nix
+      ./plugins/gitsigns.nix
+      ./plugins/indent-blankline.nix
+      ./plugins/lint.nix
+      ./plugins/lsp.nix
       ./plugins/mini.nix
+      ./plugins/neo-tree.nix
+      ./plugins/snacks.nix
+      ./plugins/telescope.nix
+      ./plugins/todo-comments.nix
       ./plugins/treesitter.nix
+      ./plugins/ux.nix
+      ./plugins/which-key.nix
     ];
 
     colorschemes = {
       tokyonight = {
-        enable = true;
+        enable = false;
         settings = {
           style = "night";
-          styles.comments.italic = false;
+          styles.comments.italic = true;
+        };
+      };
+      catpuccin = {
+        enable = false;
+        settings = {
+          flavor = "mocha";
+          italic = true;
+          bold = true;
+          dimInactive = false;
+          transparent_background = false;
         };
       };
       vscode = {
-        enable = true;
+        enable = false;
       };
     };
 
@@ -100,6 +119,10 @@
 
       # See `:help hlsearch`
       hlsearch = true;
+    
+      smartindent = true;
+      tabstop = 2;
+      softtabsstop = 2;
     };
 
     # [[ Basic Keymaps ]]
@@ -253,14 +276,12 @@
     };
 
     plugins = {
-      # Adds icons for plugins to utilize in ui
       web-devicons.enable = true;
-
-      # Detect tabstop and shiftwidth automatically
-      # https://nix-community.github.io/nixvim/plugins/sleuth/index.html
-      guess-indent = {
-        enable = true;
-      };
+      guess-indent.enable = true;
+      trouble.enable = true;
+      aerial.enable = true;
+      trim.enable = true;
+      lz-n.enable = true;
     };
 
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html#extraconfigluapost
