@@ -43,7 +43,7 @@
           styles.comments.italic = true;
         };
       };
-      catpuccin = {
+      catppuccin = {
         enable = false;
         settings = {
           flavor = "mocha";
@@ -119,10 +119,6 @@
 
       # See `:help hlsearch`
       hlsearch = true;
-    
-      smartindent = true;
-      tabstop = 2;
-      softtabsstop = 2;
     };
 
     # [[ Basic Keymaps ]]
@@ -283,6 +279,8 @@
       trim.enable = true;
       lz-n.enable = true;
     };
+
+    extraConfigLua = builtins.readFile ./extra.lua;
 
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html#extraconfigluapost
     extraConfigLuaPost = ''
