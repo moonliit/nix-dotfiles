@@ -17,6 +17,7 @@
       # Plugins
       ./plugins/autopairs.nix
       ./plugins/blink-cmp.nix
+      ./plugins/bufferline.nix
       ./plugins/comment.nix
       ./plugins/conform.nix
       ./plugins/debug.nix
@@ -33,6 +34,7 @@
       ./plugins/treesitter.nix
       ./plugins/ux.nix
       ./plugins/which-key.nix
+      ./plugins/yazi.nix
     ];
 
     colorschemes = {
@@ -119,6 +121,17 @@
 
       # See `:help hlsearch`
       hlsearch = true;
+
+      # Tab size
+      tabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
+
+      # Indent stuff
+      listchars = {
+        tab = "  "; # just show spaces for tabs
+        space = " ";
+      };
     };
 
     # [[ Basic Keymaps ]]
@@ -147,28 +160,26 @@
         };
       }
       # TIP: Disable arrow keys in normal mode
-      /*
-        {
-          mode = "n";
-          key = "<left>";
-          action = "<cmd>echo 'Use h to move!!'<CR>";
-        }
-        {
-          mode = "n";
-          key = "<right>";
-          action = "<cmd>echo 'Use l to move!!'<CR>";
-        }
-        {
-          mode = "n";
-          key = "<up>";
-          action = "<cmd>echo 'Use k to move!!'<CR>";
-        }
-        {
-          mode = "n";
-          key = "<down>";
-          action = "<cmd>echo 'Use j to move!!'<CR>";
-        }
-      */
+      {
+        mode = "n";
+        key = "<left>";
+        action = "<cmd>echo 'Use h to move!!'<CR>";
+      }
+      {
+        mode = "n";
+        key = "<right>";
+        action = "<cmd>echo 'Use l to move!!'<CR>";
+      }
+      {
+        mode = "n";
+        key = "<up>";
+        action = "<cmd>echo 'Use k to move!!'<CR>";
+      }
+      {
+        mode = "n";
+        key = "<down>";
+        action = "<cmd>echo 'Use j to move!!'<CR>";
+      }
       # Keybinds to make split navigation easier.
       #  Use CTRL+<hjkl> to switch between windows
       #
@@ -274,16 +285,17 @@
     plugins = {
       web-devicons.enable = true;
       guess-indent.enable = true;
+      fzf-lua.enable = true;
       trouble.enable = true;
       aerial.enable = true;
       trim.enable = true;
       lz-n.enable = true;
     };
 
-    extraConfigLua = builtins.readFile ./extra.lua;
+    extraConfigLuaPost = builtins.readFile ./extra.lua;
 
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html#extraconfigluapost
-    extraConfigLuaPost = ''
+    extraConfigLua = ''
       -- The line beneath this is called `modeline`. See `:help modeline`
       -- vim: ts=2 sts=2 sw=2 et
       vim.cmd("colorscheme nonbinary-dark");
