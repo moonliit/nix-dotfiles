@@ -25,10 +25,7 @@
     };
 
     nvchad-starter = {
-      path = builtins.path {
-        path = ./modules/home-manager/tools/nvchad/starter;
-        name = "nvchad-starter";
-      };
+      url = "path:./modules/home-manager/tools/nvchad/starter";
       flake = false;
     };
 
