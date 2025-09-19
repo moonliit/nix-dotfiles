@@ -24,13 +24,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nvchad = {
+      url = "github:nix-community/nix4nvchad";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Extra packages
     nixcord.url = "github:kaylorben/nixcord";
     nixowos.url = "github:yunfachi/nixowos";
   };
 
-  outputs =
-    { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, ... } @ inputs:
     let
       system = "x86_64-linux";
     in
@@ -52,32 +56,25 @@
             # Shared home-manager modules
             home-manager.sharedModules = [
               inputs.nixvim.homeModules.nixvim
+              inputs.nvchad.homeManagerModules.default
               inputs.nixcord.homeModules.nixcord
               inputs.nixowos.homeModules.default
             ];
           }
 
-          (
-            {
-              config,
-              pkgs,
-              lib,
-              ...
-            }:
-            {
-              # allow unfree packages
-              nixpkgs.config.allowUnfree = true;
-              # add overlays
-              nixpkgs.overlays = [
-                inputs.nur.overlays.default
-                inputs.rust-overlay.overlays.default
-              ];
-              # system pkgs
-              environment.systemPackages = [
-                pkgs.rust-bin.stable.latest.default
-              ];
-            }
-          )
+          ({ config, pkgs, lib, ... }: {
+            # allow unfree packages
+            nixpkgs.config.allowUnfree = true;
+            # add overlays
+            nixpkgs.overlays = [
+              inputs.nur.overlays.default
+              inputs.rust-overlay.overlays.default
+            ];
+            # system pkgs
+            environment.systemPackages = [
+              pkgs.rust-bin.stable.latest.default
+            ];
+          })
 
           inputs.nixowos.nixosModules.default
         ];
