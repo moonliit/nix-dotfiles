@@ -2,6 +2,7 @@
 
 with pkgs; [
   vim
+  neovide
   helix
   unzip
   ripgrep
@@ -9,7 +10,7 @@ with pkgs; [
   xclip
   nix-prefetch-git
   librewolf
-  chromium
+  google-chrome
   wget
   kitty
   btop

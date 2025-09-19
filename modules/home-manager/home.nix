@@ -29,6 +29,5 @@
     ./apps/vscode/vscode.nix
     ./apps/nixcord/nixcord.nix
     ./apps/librewolf/librewolf.nix
-    ./apps/chromium/chromium.nix
   ];
 }

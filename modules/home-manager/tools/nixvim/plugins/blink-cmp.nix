@@ -67,11 +67,25 @@
       sources = {
         default = [
           "lsp"
-          "path"
           "snippets"
+          "path"
+          "buffer"
           "lazydev"
         ];
         providers = {
+          lsp = {
+            score_offset = 200;      # prefer LSP candidates strongly
+          };
+          snippets = {
+            score_offset = 100;      # snippets next
+          };
+          path = {
+            score_offset = 50;       # file paths moderately
+          };
+          buffer = {
+            score_offset = -100;     # push buffer words to the very bottom
+            min_keyword_length = 3;  # don't offer short buffer words (optional)
+          };
           lazydev = {
             module = "lazydev.integrations.blink";
             score_offset = 100;
