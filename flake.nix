@@ -24,9 +24,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvchad = {
+    nvchad-starter = {
+      url = "path:./modules/home-manager/tools/nvchad/starter";
+      flake = false;
+    };
+
+    nix4nvchad = {
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nvchad-starter.follows = "nvchad-starter";
     };
 
     # Extra packages
@@ -56,7 +62,7 @@
             # Shared home-manager modules
             home-manager.sharedModules = [
               inputs.nixvim.homeModules.nixvim
-              inputs.nvchad.homeManagerModules.default
+              inputs.nix4nvchad.homeManagerModules.default
               inputs.nixcord.homeModules.nixcord
               inputs.nixowos.homeModules.default
             ];
