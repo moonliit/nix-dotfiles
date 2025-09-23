@@ -25,7 +25,7 @@
     };
 
     nvchad-starter = {
-      url = "path:./modules/home-manager/tools/nvchad/starter";
+      url = "github:moonliit/NvChadConfig";
       flake = false;
     };
 

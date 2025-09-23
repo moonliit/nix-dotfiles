@@ -566,14 +566,18 @@
     "nvchad-starter": {
       "flake": false,
       "locked": {
-        "path": "./modules/home-manager/tools/nvchad/starter",
-        "type": "path"
+        "lastModified": 1758594386,
+        "narHash": "sha256-VMyyo8A3P6bPlSlhEiUlGb5bbsFQes/409dZFWho0vM=",
+        "owner": "moonliit",
+        "repo": "NvChadConfig",
+        "rev": "fc9fcd8d292893a08a2e9945bf993e2f94e780d5",
+        "type": "github"
       },
       "original": {
-        "path": "./modules/home-manager/tools/nvchad/starter",
-        "type": "path"
-      },
-      "parent": []
+        "owner": "moonliit",
+        "repo": "NvChadConfig",
+        "type": "github"
+      }
     },
     "pre-commit-hooks": {
       "inputs": {
