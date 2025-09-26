@@ -566,11 +566,11 @@
     "nvchad-starter": {
       "flake": false,
       "locked": {
-        "lastModified": 1758594386,
-        "narHash": "sha256-VMyyo8A3P6bPlSlhEiUlGb5bbsFQes/409dZFWho0vM=",
+        "lastModified": 1758927279,
+        "narHash": "sha256-aOtGU/De4IwPZ+E3xe/TojGUI3c/2zK6pRx9QMmQvdI=",
         "owner": "moonliit",
         "repo": "NvChadConfig",
-        "rev": "fc9fcd8d292893a08a2e9945bf993e2f94e780d5",
+        "rev": "29c6192298fac02ecbfabb9ce6e15408d8db9e4b",
         "type": "github"
       },
       "original": {

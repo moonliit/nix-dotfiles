@@ -1,68 +1,144 @@
 { pkgs }:
 
-with pkgs; [
-  vim
-  neovide
-  helix
-  unzip
-  ripgrep
-  fd
-  xclip
-  nix-prefetch-git
-  librewolf
-  google-chrome
-  wget
-  kitty
-  btop
-  gedit
-  bat
-  git gh
-  fastfetch hyfetch
-  starship pywal
-  zsh oh-my-zsh
-  rofi-wayland
-  nil
-  tree-sitter
-  jq
-  cava
-  tty-clock
-  discord
-  zapzap
-  zoom-us
-  docker
-  vscode-fhs
-  python312
-  gcc gdb clang cmake ninja
-  rustc rustup cargo rust-analyzer
-  pavucontrol
-  helvum
-  pamixer
-  qpwgraph
-  playerctl
-  brightnessctl
-  acpi
-  waybar
-  # Utilities
-  wl-clipboard
-  cliphist
-  grim slurp
-  mpv
-  # Wayland stuff
-  hyprlock
-  hyprpaper
-  hypridle
-  hyprpicker
-  wlogout
-  wev
-  yazi fzf
-  iwd impala
-  zoxide
-  gitui
-  swayosd
-  swaynotificationcenter
-  nur.repos.charmbracelet.crush
-  libreoffice
-  xournalpp
-  obsidian
-  texlive.combined.scheme-full
-]
+with pkgs;
+
+let
+  # Editors / IDEs
+  editors = [
+    vim
+    helix
+    vscode-fhs
+    gedit
+  ];
+
+  # Terminal & shells
+  terminals_and_shells = [
+    kitty
+    zsh
+    oh-my-zsh
+  ];
+
+  # Compilers, build tools, debuggers
+  build_tools = [
+    gcc
+    gdb
+    clang
+    cmake
+    gnumake
+    ninja
+  ];
+
+  # Languages & tooling
+  languages = [
+    python312
+    rustc rustup cargo
+    jdk
+    mpich
+  ];
+
+  # Language servers
+  lsps = [
+    nil
+    rust-analyzer
+    lua-language-server
+  ];
+
+  # Dev utils
+  dev_utils = [
+    nix-prefetch-git
+    wget
+    git gh gitui
+  ];
+
+  # CLI utilities
+  cli_tools = [
+    ripgrep
+    fd
+    bat
+    jq
+    fzf
+    yazi
+    tree-sitter
+    unzip
+  ];
+
+  # Productivity / shell niceties
+  productivity = [
+    starship
+    pywal
+    zoxide
+    cliphist
+    wl-clipboard
+  ];
+
+  # Multimedia / audio
+  multimedia = [
+    mpv
+    cava
+    pavucontrol
+    helvum
+    pamixer
+    qpwgraph
+    playerctl
+    grim slurp
+  ];
+
+  # Communication
+  communication = [
+    discord
+    zapzap
+    zoom-us
+  ];
+
+  # Wayland / desktop tools
+  wayland_and_ui = [
+    waybar
+    hyprlock
+    hyprpaper
+    hypridle
+    hyprpicker
+    wlogout
+    wev
+    swaynotificationcenter
+    swayosd
+    rofi-wayland
+    iwd impala
+  ];
+
+  # System utilities
+  system_utils = [
+    fastfetch hyfetch
+    btop
+    brightnessctl
+    acpi
+    tty-clock
+    nur.repos.charmbracelet.crush
+  ];
+
+  # Docs & office
+  docs_and_office = [
+    libreoffice
+    xournalpp
+    obsidian
+    texlive.combined.scheme-full
+  ];
+
+  # Containers
+  containers = [
+    docker
+  ];
+
+in
+  editors
+  ++ terminals_and_shells
+  ++ build_tools
+  ++ languages
+  ++ dev_utils
+  ++ cli_tools
+  ++ productivity
+  ++ multimedia
+  ++ communication
+  ++ wayland_and_ui
+  ++ system_utils
+  ++ docs_and_office
+  ++ containers
