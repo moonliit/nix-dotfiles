@@ -18,6 +18,12 @@
   plugins = {
     colorizer = {
       enable = true;
+      lazyLoad = {
+        enable = true;
+        settings = {
+          event = "BufReadPre";
+        };
+      };
       settings = {
         filetypes = {
           __unkeyed = "*";

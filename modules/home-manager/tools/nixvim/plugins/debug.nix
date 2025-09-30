@@ -12,6 +12,12 @@
   # Creates a beautiful debugger UI
   plugins.dap-ui = {
     enable = true;
+    lazyLoad = {
+      enable = true;
+      settings = {
+        cmd = "DebugStart";
+      };
+    };
 
     # Set icons to characters that are more likely to work in every terminal.
     # Feel free to remove or use ones that you like more! :)
@@ -135,8 +141,7 @@
     }
   ];
 
-  # https://nix-community.github.io/nixvim/NeovimOptions/index.html#extraconfiglua
-  extraConfigLua = ''
+  plugins.dap-ui.luaConfig.post = ''
     -- Change breakpoint icons
     -- vim.api.nvim_set_hl(0, 'DapBreak', { fg = '#e51400' })
     -- vim.api.nvim_set_hl(0, 'DapStop', { fg = '#ffcc00' })

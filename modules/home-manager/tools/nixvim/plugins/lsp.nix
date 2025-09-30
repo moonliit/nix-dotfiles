@@ -56,6 +56,12 @@
   # https://nix-community.github.io/nixvim/plugins/lsp/index.html
   plugins.lsp = {
     enable = true;
+    lazyLoad = {
+      enable = true;
+      settings = {
+        event = "BufReadPre";
+      };
+    };
 
     # Enable the following language servers
     #  Feel free to add/remove any LSPs that you want here. They will automatically be installed.

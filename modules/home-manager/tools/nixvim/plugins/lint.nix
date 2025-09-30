@@ -3,6 +3,7 @@
   # https://nix-community.github.io/nixvim/plugins/lint/index.html
   plugins.lint = {
     enable = true;
+    #lazyLoad.enable = true;
 
     # NOTE: Enabling these will cause errors unless these tools are installed
     lintersByFt = {

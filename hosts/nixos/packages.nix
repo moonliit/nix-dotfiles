@@ -16,6 +16,7 @@ let
     kitty
     zsh
     oh-my-zsh
+    tmux
   ];
 
   # Compilers, build tools, debuggers

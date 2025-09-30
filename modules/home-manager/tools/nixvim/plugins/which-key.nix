@@ -3,6 +3,12 @@
   # https://nix-community.github.io/nixvim/plugins/which-key/index.html
   plugins.which-key = {
     enable = true;
+    lazyLoad = {
+      enable = true;
+      settings = {
+        event = "VimEnter";
+      };
+    };
 
     # Document existing key chains
     settings = {

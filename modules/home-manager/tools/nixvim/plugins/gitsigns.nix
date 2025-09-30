@@ -4,6 +4,13 @@
   # https://nix-community.github.io/nixvim/plugins/gitsigns/index.html
   plugins.gitsigns = {
     enable = true;
+    lazyLoad = {
+      enable = true;
+      settings = {
+        event = "BufReadPre";
+      };
+    };
+
     settings = {
       signs = {
         add.text = "┃";

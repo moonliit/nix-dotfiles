@@ -18,6 +18,12 @@
   # https://nix-community.github.io/nixvim/plugins/cmp/index.html
   plugins.blink-cmp = {
     enable = true;
+    #lazyLoad = {
+    #  enable = true;
+    #  settings = {
+    #    event = "InsertEnter";
+    #  };
+    #};
 
     settings = {
 

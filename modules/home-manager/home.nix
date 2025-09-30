@@ -24,8 +24,8 @@
     ./tools/rofi/rofi.nix
     ./tools/swayosd/swayosd.nix
     ./tools/helix/helix.nix
-    #./tools/nixvim/nixvim.nix
-    ./tools/nvchad/nvchad.nix
+    ./tools/nixvim/nixvim.nix
+    #./tools/nvchad/nvchad.nix
     # apps
     ./apps/vscode/vscode.nix
     ./apps/nixcord/nixcord.nix

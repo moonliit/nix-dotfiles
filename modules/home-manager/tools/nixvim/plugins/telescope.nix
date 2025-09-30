@@ -24,6 +24,16 @@
     # [[ Configure Telescope ]]
     # See `:help telescope` and `:help telescope.setup()`
     enable = true;
+    lazyLoad = {
+      enable = true;
+      settings = {
+        cmd = "Telescope";
+        keys = [
+          { __unkeyed-1 = "<leader>ff"; __unkeyed-3 = "<CMD>Telescope find_files<CR>"; desc = "Find files"; }
+          { __unkeyed-1 = "<leader>fg"; __unkeyed-3 = "<CMD>Telescope live_grep<CR>"; desc = "Live grep"; }
+        ];
+      };
+    };
 
     # Enable Telescope extensions
     extensions = {

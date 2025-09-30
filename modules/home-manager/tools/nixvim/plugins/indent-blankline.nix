@@ -1,6 +1,12 @@
 {
   plugins.indent-blankline = {
     enable = true;
+    lazyLoad = {
+      enable = true;
+      settings = {
+        event = "BufReadPre";
+      };
+    };
 
     luaConfig.pre = ''
       -- turn off list symbols so you don't get >> / » markers

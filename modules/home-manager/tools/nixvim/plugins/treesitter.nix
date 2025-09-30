@@ -4,6 +4,12 @@
   # https://nix-community.github.io/nixvim/plugins/treesitter/index.html
   plugins.treesitter = {
     enable = true;
+    lazyLoad = {
+      enable = true;
+      settings = {
+        event = "BufReadPost"; # load after a buffer is read
+      };
+    };
 
     # Installing tree-sitter grammars from Nixpkgs (recommended)
     # https://nix-community.github.io/nixvim/plugins/treesitter/index.html#installing-tree-sitter-grammars-from-nixpkgs
