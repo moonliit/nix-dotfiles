@@ -7,22 +7,29 @@ in
   plugins.bufferline = {
     enable = true;
 
-    luaConfig.pre = ''
-      pcall(function()
-	      require("bufferline").setup({
-		      options = {
-		        numbers = "ordinal",
-      			diagnostics = "nvim_lsp",
-      			show_buffer_close_icons = true,
-      			show_close_icon = true,
-		      	separator_style = "thin",
-      			always_show_bufferline = true,
-		      	enforce_regular_tabs = false,
-			      indicator = { style = "icon", icon = "▎" },
-		      },
-	      })
-      end)
-    '';
+    settings = {
+      options = {
+        numbers = "ordinal";
+        diagnostics = "nvim_lsp";
+        show_buffer_close_icons = true;
+        show_close_icon = true;
+        separator_style = "thin";
+        always_show_bufferline = true;
+        enforce_regular_tabs = false;
+        indicator = {
+          style = "icon";
+          icon = "▎";
+        };
+        offsets = [
+          {
+            filetype = "neo-tree";
+            highlight = "Directory";
+            text = "File Explorer";
+            text_align = "center";
+          }
+        ];
+      };
+    };
   };
 
   keymaps = [
