@@ -17,28 +17,68 @@ in
         always_show_bufferline = true;
         enforce_regular_tabs = false;
         indicator = {
-          style = "icon";
-          icon = "▎";
+          style = "underline";
         };
         offsets = [
           {
             filetype = "neo-tree";
             highlight = "Directory";
-            text = "File Explorer";
-            text_align = "center";
+            padding = 1;
           }
         ];
+      };
+      # TODO: change colors from these things
+      highlights = {
+        buffer_selected = {
+          fg = "#ffffff";
+          bg = "#1e1e2e";
+          sp = "#ffffff";
+          underline = true;
+        };
+        tab_selected = {
+          fg = "#ffffff";
+          bg = "#1e1e2e";
+        };
+        separator_selected = {
+          fg = "#1e1e2e";
+          bg = "#1e1e2e";
+        };
+        fill = {
+          bg = "#1e1e2e";
+        };
       };
     };
   };
 
+  highlight = {
+    "EndOfBuffer" = {
+      fg = "NONE";
+    };
+  };
+
   keymaps = [
-    # Ctrl-t -> create new tab
+    # Alt-H -> switch to prev buffer
+    {
+      key = "<A-h>";
+      mode = "n";
+      action = "<cmd> BufferLineCyclePrev <cr>";
+      options = { desc = "Prev Buffer"; };
+    }
+
+    # Alt-L -> switch to next buffer
+    {
+      key = "<A-l>";
+      mode = "n";
+      action = "<cmd> BufferLineCycleNext <cr>";
+      options = { desc = "Next Buffer"; };
+    }
+
+    # Ctrl-T -> create new tab
     {
       key = "<C-t>";
       mode = "n";
       # TODO: make it so that new tabs can be opened when in an empty new tab
-      action = "<cmd> enew <CR>";
+      action = "<cmd> enew <cr>";
       options = { noremap = true; silent = true; desc = "New tab" ; };
     }
 
@@ -49,7 +89,7 @@ in
       action.__raw = ''
         function()
           -- TODO:
-          vim.notify("TODO", vim.log.levels.INFO)
+          vim.notify("TODO", vim.log.levels.WARN)
         end
       '';
       options = { noremap = true; silent = true; desc = "Toggle last two tabs" ; };
@@ -61,38 +101,38 @@ in
       mode = "n";
       action.__raw = ''
         function()
-          -- TODO
-          vim.notify("TODO", vim.log.levels.INFO)
+          -- TODO:
+          vim.notify("TODO", vim.log.levels.WARN)
         end
       '';
       options = { noremap = true; silent = true; desc = "Toggle last two tabs (fallback)"; };
     }
 
-    # Ctrl-W -> close current tab (but skip neo-tree)
+    # Ctrl-W -> close current buffer
     {
       key = "<C-w>";
       mode = "n";
-      # TODO: find a way to not make it laggy (?)
       action.__raw = ''
         function()
-          local ft = vim.bo.filetype
-          -- Neo-tree filetypes: 'neo-tree' or 'neo-tree-popup'
-          if ft == "neo-tree" or ft == "neo-tree-popup" then
-            vim.notify("Refusing to close Neo-tree with <C-w>", vim.log.levels.INFO)
-            return
-          end
-          vim.cmd("bp|sp|bn|bd!")
+          Snacks.bufdelete()
         end
       '';
-      options = { noremap = true; silent = true; nowait = true; desc = "Close current tab (skip neo-tree)"; };
+      options = { noremap = true; silent = true; nowait = true; desc = "Close current buffer"; };
+    }
+
+    # Ctrl-S -> save current buffer
+    {
+      key = "<C-s>";
+      mode = "n";
+      action = "<cmd> w <cr>";
+      options = { desc = "Save current buffer"; };
     }
   ]
-    # TODO: Ctrl-S to save current file in buffer
 
   # Ctrl-number mappings 1..9 (with literals embedded into the Lua body)
   ++ (lib.concatMap (n: [
     {
-      key = "<C-" + toString n + ">";
+      key = toString n;
       mode = "n";
       action.__raw = ''
         function()
@@ -101,7 +141,7 @@ in
           bf.go_to(target, true)
         end
       '';
-      options = { noremap = true; silent = true; desc = "Goto tab " + toString n ; };
+      options = { noremap = true; silent = true; desc = "Goto buffer " + toString n ; };
     }
   ]) (lib.range 1 9));
 }

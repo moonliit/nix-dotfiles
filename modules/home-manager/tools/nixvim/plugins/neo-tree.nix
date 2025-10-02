@@ -14,6 +14,27 @@
         };
       };
     };
+
+    sourceSelector = {
+      winbar = false;
+    };
+
+    hideRootNode = true;
+  };
+
+  highlight = {
+    "NeoTreeNormal" = {
+      bg = "#15151a";
+      fg = "#cdd6f4";
+    };
+    "NeoTreeNormalNC" = {
+      bg = "#15151a";
+      fg = "#cdd6f4";
+    };
+    "WinSeparator" = {
+      bg = "#2f1f31";
+      fg = "#2f1f31";
+    };
   };
 
   keymaps = [

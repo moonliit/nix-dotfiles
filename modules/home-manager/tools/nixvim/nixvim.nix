@@ -132,6 +132,9 @@
         tab = "  "; # just show spaces for tabs
         space = " ";
       };
+
+      # Remove trailing "~"
+      fillchars = { eob = " "; };
     };
 
     # [[ Basic Keymaps ]]

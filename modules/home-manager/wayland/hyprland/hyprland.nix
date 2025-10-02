@@ -1,10 +1,14 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   isLatam = false;
   wallpaper = "oneshot-reflection.jpg";
 in
 {
+  imports = [
+    ./keybinds.nix
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -15,38 +19,33 @@ in
 
       exec-once = [
         "hyprpaper"
-	"hyprlock || hyprctl dispatch exit"
-	"sleep 1 && waybar"
+        "hyprlock || hyprctl dispatch exit"
+        "sleep 1 && waybar"
       ];
 
-      # Animations
       animations = {
         enabled = true;
-	bezier = [ "myBezier, 0.05, 0.9, 0.1, 1.05" ];
+	      bezier = [ "myBezier, 0.05, 0.9, 0.1, 1.05" ];
         animation = [
           "windows, 1, 5, myBezier"
           "border, 1, 10, default"
           "fade, 1, 5, default"
-          "workspaces, 1, 3, default" # <-- workspace switch animation
+          "workspaces, 1, 3, default"
         ];
-        # duration is in tenths of ms steps (so lower = faster)
-        # If "3" feels too slow, try "1" or "2"
       };
 
-      workspace = [
-        "1" "2" "3"
-      ];
+      #workspace = [ "1" "2" "3" ];
 
       # Input settings
       input = {
-	kb_layout = if isLatam then "latam" else "us";
+        kb_layout = if isLatam then "latam" else "us";
         repeat_delay = 200;
-	repeat_rate = 35;
-	follow_mouse = 1; # focus windows under mouse
+        repeat_rate = 35;
+        follow_mouse = 1; # focus windows under mouse
         touchpad = {
           natural_scroll = true;
           tap-to-click = true;
-	  scroll_factor = 1;
+          scroll_factor = 1;
         };
         sensitivity = 0.7; # 0 = default
       };
@@ -56,12 +55,9 @@ in
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgb(9a59cf)";  # catppuccin-ish
+        "col.active_border" = "rgb(9a59cf)";
         "col.inactive_border" = "rgba(1e1e2eee)";
       };
-
-      # Keybindings
-      bind = import ./keybinds.nix { inherit pkgs; };
     };
   };
 

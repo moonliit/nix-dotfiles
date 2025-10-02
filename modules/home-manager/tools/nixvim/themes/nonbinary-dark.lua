@@ -47,7 +47,7 @@ hl(0, "PmenuSel", { bg = selectionStrong, fg = "#ffffff" })
 hl(0, "PmenuSbar", { bg = "#1b1820" })
 hl(0, "PmenuThumb", { bg = selectionStrong })
 hl(0, "Title", { fg = statusFg, bold = true })
-hl(0, "TabLine", { bg = "#1b1620", fg = "#9aa6a6" })
+hl(0, "TabLine", { bg = "#15151a", fg = "#cdd6f4" })
 hl(0, "TabLineSel", { bg = statusBg, fg = statusFg })
 
 -- Virtual guides / indent
