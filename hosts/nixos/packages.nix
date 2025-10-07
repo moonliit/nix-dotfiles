@@ -129,6 +129,13 @@ let
     docker
   ];
 
+  # Browsers
+  browsers = [
+    firefox
+    librewolf
+    google-chrome
+  ];
+
 in
   editors
   ++ terminals_and_shells
@@ -143,3 +150,4 @@ in
   ++ system_utils
   ++ docs_and_office
   ++ containers
+  ++ browsers

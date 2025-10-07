@@ -2,6 +2,14 @@
 
 let
   lib = pkgs.lib;
+  selected = {
+    bg = "#1e1e1e";
+    fg = "#ffffff";
+  };
+  other = {
+    bg = "#0f1014";
+    fg = "#9b9ea4";
+  };
 in
 {
   plugins.bufferline = {
@@ -29,25 +37,51 @@ in
       };
       # TODO: change colors from these things
       highlights = {
+        background = {
+          bg = other.bg;
+          fg = other.fg;
+        };
         buffer_selected = {
-          fg = "#ffffff";
-          bg = "#1e1e2e";
-          sp = "#ffffff";
-          underline = true;
+          fg = selected.fg;
+          bg = selected.bg;
+          sp = selected.fg;
         };
         tab_selected = {
-          fg = "#ffffff";
-          bg = "#1e1e2e";
+          fg = selected.fg;
+          bg = selected.bg;
         };
         separator_selected = {
-          fg = "#1e1e2e";
-          bg = "#1e1e2e";
+          fg = selected.fg;
+          bg = selected.bg;
         };
         fill = {
-          bg = "#1e1e2e";
+          bg = selected.bg;
+        };
+        numbers_selected = {
+          fg = selected.fg;
+          bg = selected.bg;
+        };
+        modified_selected = {
+          fg = selected.fg;
+          bg = selected.bg;
+          sp = selected.fg;
+          underline = true;
+        };
+        close_button_selected = {
+          fg = selected.fg;
+          bg = selected.bg;
+        };
+        indicator_selected = {
+          fg = selected.fg;
+          bg = selected.bg;
+          sp = selected.fg;
         };
       };
     };
+
+    luaConfig.post = ''
+      -- lmao
+    '';
   };
 
   highlight = {

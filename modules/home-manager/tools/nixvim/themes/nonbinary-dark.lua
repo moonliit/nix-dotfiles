@@ -31,6 +31,10 @@ local linenr = "#6e6e76"
 local linenrSel = "#ebebeb"
 local indentGuide = "#262629"
 
+-- #1e1e2e current buffer background
+-- #231724 devicon???
+-- #0f1014 other buffer background?
+
 -- UI groups
 hl(0, "Normal", { bg = bg, fg = fg })
 hl(0, "Cursor", { fg = cursorFg, bg = cursorBg })

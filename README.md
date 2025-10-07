@@ -1,7 +1,9 @@
 TODO:
-- setup nvchad as main nvim distro and configure it to make it more comfortable
-(https://github.com/nix-community/nix4nvchad)
-- setup a cool nvchad theme (as in, nonbinary dark)
 - keep testing out neovide or maybe replace it with neovim-wrapper
-- set hyprland windows movement keybinds 
-- get some more tooling packages ig
+- set some more hyprland keybinds
+- give the nvim bufferline bleeding colors from warnings/errors one last shot (its honestly not so bad lmao)
+- try to get a nvim terminal going like in nvchad
+- get some other nvim plugins
+- configure more the lsp (like look at c++ for example holy fuck)
+- find a way to swap position of adyacent lines
+- find way to move past current line with h-l
