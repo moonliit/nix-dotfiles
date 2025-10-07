@@ -26,6 +26,7 @@
       ./plugins/indent-blankline.nix
       ./plugins/lint.nix
       ./plugins/lsp.nix
+      ./plugins/lualine.nix
       ./plugins/mini.nix
       ./plugins/neo-tree.nix
       ./plugins/snacks.nix
