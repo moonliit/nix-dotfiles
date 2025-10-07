@@ -28,5 +28,23 @@
         lualine_z = [];
       };
     };
+
+    luaConfig.post = ''
+      require('lualine').setup {
+        options = {
+          theme = {
+            normal = {
+              a = { bg = '#f5c2e7', fg = '#1e1e2e', gui = 'bold' },
+              b = { bg = '#302d41', fg = '#f5c2e7' },
+              c = { bg = '#1e1e2e', fg = '#f8f8f2' },
+            },
+            insert = { a = { bg = '#a6e3a1', fg = '#1e1e2e', gui = 'bold' } },
+            visual = { a = { bg = '#89b4fa', fg = '#1e1e2e', gui = 'bold' } },
+            replace = { a = { bg = '#f38ba8', fg = '#1e1e2e', gui = 'bold' } },
+            inactive = { a = { bg = '#1e1e2e', fg = '#6c7086' } },
+          },
+        },
+      }
+    '';
   };
 }
