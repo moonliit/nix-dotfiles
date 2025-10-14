@@ -8,7 +8,9 @@ let
     vim
     helix
     vscode-fhs
+    zed-editor-fhs
     gedit
+    arduino-ide
   ];
 
   # Terminal & shells
@@ -27,6 +29,7 @@ let
     cmake
     gnumake
     ninja
+    mosquitto
   ];
 
   # Languages & tooling
@@ -141,6 +144,7 @@ in
   ++ terminals_and_shells
   ++ build_tools
   ++ languages
+  ++ lsps
   ++ dev_utils
   ++ cli_tools
   ++ productivity

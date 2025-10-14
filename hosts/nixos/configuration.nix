@@ -22,7 +22,7 @@ in
     users = {
       "moonliit" = import ../../modules/home-manager/home.nix;
     };
-  }; 
+  };
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -33,7 +33,7 @@ in
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
- 
+
   # Greeter
   services.greetd = {
     enable = true;
@@ -97,7 +97,7 @@ in
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  
+
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
@@ -110,6 +110,17 @@ in
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+  };
+
+  # Enable mosquitto
+  services.mosquitto = {
+    enable = true;
+    listeners = [
+      {
+        port = 1883;
+        settings.allow_anonymous = true;
+      }
+    ];
   };
 
   # Enable programs

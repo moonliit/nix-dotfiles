@@ -35,7 +35,6 @@ in
           }
         ];
       };
-      # TODO: change colors from these things
       highlights = {
         background = {
           bg = other.bg;
@@ -82,12 +81,6 @@ in
     luaConfig.post = ''
       -- lmao
     '';
-  };
-
-  highlight = {
-    "EndOfBuffer" = {
-      fg = "NONE";
-    };
   };
 
   keymaps = [

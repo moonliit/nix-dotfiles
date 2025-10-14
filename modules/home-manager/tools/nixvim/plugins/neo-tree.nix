@@ -1,26 +1,37 @@
 {
+  /*
   plugins.neo-tree = {
     enable = true;
-
-    filesystem = {
-      filteredItems = {
-        visible = true;
-      };
-      window = {
-        mappings = {
-          "F" = "fuzzy_finder";
-          "." = "set_root";
-          "," = "navigate_up";
+    settings = {
+      filesystem = {
+        filteredItems = {
+          visible = true;
+        };
+        window = {
+          mappings = {
+            "F" = "fuzzy_finder";
+            "." = "set_root";
+            "," = "navigate_up";
+          };
         };
       };
+      sourceSelector = {
+        winbar = false;
+      };
+      hideRootNode = true;
+      close_if_last_window = true;
     };
-
-    sourceSelector = {
-      winbar = false;
-    };
-
-    hideRootNode = true;
   };
+
+  extraConfigLua = ''
+    require("neo-tree").setup({
+      filesystem = {
+        follow_current_file = {
+          enabled = false,
+        },
+      },
+    })
+  '';
 
   highlight = {
     "NeoTreeNormal" = {
@@ -74,4 +85,5 @@
       };
     }
   ];
+  */
 }
