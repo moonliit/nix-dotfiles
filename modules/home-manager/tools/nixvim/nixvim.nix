@@ -32,7 +32,7 @@
       ./plugins/snacks.nix
       ./plugins/telescope.nix
       ./plugins/todo-comments.nix
-      ./plugins/toggleterm.nix
+      ./plugins/floaterm.nix
       ./plugins/treesitter.nix
       ./plugins/ux.nix
       ./plugins/which-key.nix

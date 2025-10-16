@@ -1,4 +1,35 @@
 {
+  plugins.telescope = {
+    enable = true;
+    settings = {
+      defaults = {
+        file_ignore_patterns = [
+          "node_modules"
+          ".git"
+        ];
+        /*mappings = {
+          n = {
+            "<leader>ff" = {
+              __raw = "require('telescope.actions').find_files";
+            };
+          };
+        };*/
+      };
+    };
+    keymaps = {
+      "<C-m>" = "find_files";    # find files
+      "<leader>fg" = "live_grep";     # grep in project
+      "<leader>fb" = "buffers";       # list open buffers
+      "<leader>fh" = "help_tags";     # help tags
+      # example of a mapping with extra options (description)
+      "<C-p>" = {
+        action = "git_files";
+        options = { desc = "Telescope: git files"; };
+      };
+    };
+  };
+
+  /*
   # Fuzzy Finder (files, lsp, etc)
   # https://nix-community.github.io/nixvim/plugins/telescope/index.html
   plugins.telescope = {
@@ -176,4 +207,5 @@
       };
     }
   ];
+  */
 }

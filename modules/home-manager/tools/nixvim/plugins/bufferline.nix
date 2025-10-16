@@ -104,8 +104,14 @@ in
     {
       key = "<C-t>";
       mode = "n";
-      # TODO: make it so that new tabs can be opened when in an empty new tab
-      action = "<cmd> enew <cr>";
+      action.__raw = ''
+        local bufname = vim.api.nvim_buf_get_name(0)
+        if not bufname:match("term://.*toggleterm") then
+          vim.cmd("enew")
+        else
+          vim.notify("You're in a ToggleTerm buffer — skipping :enew", vim.log.levels.INFO)
+        end
+      '';
       options = { noremap = true; silent = true; desc = "New tab" ; };
     }
 
