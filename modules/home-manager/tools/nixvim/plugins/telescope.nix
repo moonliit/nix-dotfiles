@@ -1,32 +1,51 @@
 {
   plugins.telescope = {
     enable = true;
+
+    /*
+    lazyLoad = {
+      enable = true;
+      settings = {
+        cmd = "Telescope";
+        keys = [
+          { key = "<C-m>"; command = "<cmd>Telescope find_files<CR>"; desc = "Telescope: find files"; }
+          { key = "<C-o>"; command = "<cmd>Telescope live_grep<CR>";  desc = "Telescope: live grep"; }
+          { key = "<C-p>"; command = "<cmd>Telescope git_files<CR>";  desc = "Telescope: git files"; }
+        ];
+      };
+    };
+    */
+
     settings = {
       defaults = {
         file_ignore_patterns = [
           "node_modules"
           ".git"
         ];
-        /*mappings = {
-          n = {
-            "<leader>ff" = {
-              __raw = "require('telescope.actions').find_files";
-            };
-          };
-        };*/
       };
     };
+
     keymaps = {
       "<C-m>" = "find_files";    # find files
-      "<leader>fg" = "live_grep";     # grep in project
-      "<leader>fb" = "buffers";       # list open buffers
-      "<leader>fh" = "help_tags";     # help tags
-      # example of a mapping with extra options (description)
+      "<C-o>" = "live_grep";     # grep in project
       "<C-p>" = {
         action = "git_files";
         options = { desc = "Telescope: git files"; };
       };
     };
+  };
+
+  # Preferred: override highlights at startup
+  highlightOverride = {
+    TelescopeBorder        = { fg = "#9a59cf"; bg = "NONE"; };
+    TelescopePromptBorder  = { fg = "#9a59cf"; bg = "NONE"; };
+    TelescopeResultsBorder = { fg = "#9a59cf"; bg = "NONE"; };
+    TelescopePreviewBorder = { fg = "#9a59cf"; bg = "NONE"; };
+
+    # optional: color the title text
+    TelescopePromptTitle   = { fg = "#7aa2f7"; bg = "NONE"; };
+    TelescopeResultsTitle  = { fg = "#7aa2f7"; bg = "NONE"; };
+    TelescopePreviewTitle  = { fg = "#f7768e"; bg = "NONE"; };
   };
 
   /*

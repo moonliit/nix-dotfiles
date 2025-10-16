@@ -34,8 +34,6 @@ in
         ];
       };
 
-      #workspace = [ "1" "2" "3" ];
-
       # Input settings
       input = {
         kb_layout = if isLatam then "latam" else "us";

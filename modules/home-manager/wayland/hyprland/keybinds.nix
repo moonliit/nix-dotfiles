@@ -12,7 +12,9 @@ in
       "SUPER, TAB, cyclenext" # Window switch
       "SUPER, W, killactive" # Close window
       "SUPER, F, fullscreen" # Toggle fullscreen
-      "SUPER SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy" # Screenshot
+      #"SUPER SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy" # Screenshot
+      "SUPER SHIFT, S, exec, hyprshot -m region --clipboard-only" # Screenshot
+      "SUPER SHIFT, A, exec, hyprpicker -a" # Color picker
       ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise" # Raise volume
       ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower" # Lower volume
       ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle" # Toggle mute

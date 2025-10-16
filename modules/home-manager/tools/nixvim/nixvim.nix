@@ -29,6 +29,7 @@
       ./plugins/lualine.nix
       ./plugins/mini.nix
       ./plugins/neo-tree.nix
+      ./plugins/noice.nix
       ./plugins/snacks.nix
       ./plugins/telescope.nix
       ./plugins/todo-comments.nix

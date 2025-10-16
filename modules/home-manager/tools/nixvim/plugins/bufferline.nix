@@ -105,11 +105,21 @@ in
       key = "<C-t>";
       mode = "n";
       action.__raw = ''
-        local bufname = vim.api.nvim_buf_get_name(0)
-        if not bufname:match("term://.*toggleterm") then
-          vim.cmd("enew")
-        else
-          vim.notify("You're in a ToggleTerm buffer — skipping :enew", vim.log.levels.INFO)
+        function()
+          -- if currently in terminal mode, ignore
+          if vim.api.nvim_get_mode().mode == "t" then
+            return
+          end
+
+          local name = vim.api.nvim_buf_get_name(0)
+          local ft = vim.bo.filetype
+
+          -- only create new buffer if not in a floaterm context
+          if not (ft == "floaterm" or name:match("term://.*floaterm") or vim.b.floaterm_index) then
+            vim.cmd("enew")
+          else
+            vim.notify("In Floaterm — skipping :enew", vim.log.levels.DEBUG)
+          end
         end
       '';
       options = { noremap = true; silent = true; desc = "New tab" ; };

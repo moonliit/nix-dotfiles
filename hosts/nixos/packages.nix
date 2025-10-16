@@ -101,6 +101,7 @@ let
     hyprpaper
     hypridle
     hyprpicker
+    hyprshot
     wlogout
     wev
     swaynotificationcenter
