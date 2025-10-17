@@ -166,7 +166,7 @@ in
     # Ctrl-S -> save current buffer
     {
       key = "<C-s>";
-      mode = "n";
+      mode = [ "n" "i" "v" ];
       action = "<cmd> w <cr>";
       options = { desc = "Save current buffer"; };
     }

@@ -26,7 +26,7 @@ in
       words.enabled = true;
       statuscolumn.enabled = true;
       dashboard = {
-        enabled = true;
+        enabled = false; #true;
         sections = mkRaw ''
           {
             { section = "header" },

@@ -2,6 +2,12 @@
   plugins.neo-tree = {
     enable = true;
     settings = {
+      sources = [
+        "filesystem"
+        "buffers"
+        "git_status"
+        #"terminal"
+      ];
       filesystem = {
         filtered_items = {
           visible = true;
@@ -16,6 +22,12 @@
       };
       source_selector = {
         winbar = false;
+        sources = [
+          { source = "filesystem"; display_name = "󰉓 Files"; }
+          { source = "buffers"; display_name = "󰈙 Buffers"; }
+          { source = "git_status"; display_name = "󰊢 Git"; }
+          #{ source = "terminal"; display_name = " Terminal"; }
+        ];
       };
       hide_root_node = true;
       close_if_last_window = true;

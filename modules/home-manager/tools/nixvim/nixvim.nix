@@ -15,6 +15,7 @@
 
     imports = [
       # Plugins
+      ./plugins/alpha.nix
       ./plugins/autopairs.nix
       ./plugins/blink-cmp.nix
       ./plugins/bufferline.nix
@@ -63,7 +64,10 @@
       };
     };
 
-    clipboard.providers.wl-copy.enable = true;
+    clipboard = {
+      register = "unnamedplus";
+      providers.wl-copy.enable = true;
+    };
 
     opts = {
       # Show line numbers
@@ -145,7 +149,6 @@
     # https://nix-community.github.io/nixvim/keymaps/index.html
     keymaps = [
       # Clear highlights on search when pressing <Esc> in normal mode
-      #  See `:help hlsearch`
       {
         mode = "n";
         key = "<Esc>";
@@ -165,8 +168,9 @@
           desc = "Exit terminal mode";
         };
       }
+      # Allow ; to be used for entering command mode
       {
-        mode = "n";
+        mode = [ "n" "v" ];
         key = ";";
         action = ":";
         options = {
@@ -175,9 +179,6 @@
         };
       }
       # Keybinds to make split navigation easier.
-      #  Use CTRL+<hjkl> to switch between windows
-      #
-      #  See `:help wincmd` for a list of all window commands
       {
         mode = "n";
         key = "<C-h>";
@@ -208,6 +209,43 @@
         action = "<C-w><C-k>";
         options = {
           desc = "Move focus to the upper window";
+        };
+      }
+      # Keybinds to move current line (normal) or visual selection
+      {
+        mode = "n";
+        key = "<A-j>";
+        action = ":m .+1<CR>==";
+        options = {
+          desc = "Swap line down";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<A-k>";
+        action = ":m .-2<CR>==";
+        options = {
+          desc = "Swap line up";
+          silent = true;
+        };
+      }
+      {
+        mode = "v";
+        key = "<A-j>";
+        action = ":m '>+1<CR>gv=gv";
+        options = {
+          desc = "Swap selection down";
+          silent = true;
+        };
+      }
+      {
+        mode = "v";
+        key = "<A-k>";
+        action = ":m '<-2<CR>gv=gv";
+        options = {
+          desc = "Swap selection up";
+          silent = true;
         };
       }
     ];
@@ -285,6 +323,8 @@
       trim.enable = true;
       lz-n.enable = true;
       nix.enable = true;
+      yanky.enable = true;
+      visual-multi.enable = true;
     };
 
     extraConfigLuaPost = builtins.readFile ./extra.lua;

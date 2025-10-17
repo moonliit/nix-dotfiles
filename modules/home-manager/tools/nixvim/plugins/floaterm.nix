@@ -9,10 +9,10 @@
       autoinsert = false;
       autoclose = 1;
 
-      borderchars = "─│─│┌┐┘└";   # top, right, bottom, left, etc
-      wintitle  = true;
-      title     = "Floaterm ($1/$2)";
-      statusline = "Floaterm ($1/$2)";
+      borderchars = "─│─│┌┐┘└"; # top, right, bottom, left, etc
+      wintitle = true;
+      title = "Floaterm ($1/$2)";
+      titleposition = "center";
 
       # keymaps
       keymap_toggle = "<C-/>";      # toggle main floaterm
@@ -43,7 +43,7 @@
     # newer WinSeparator group (Neovim 0.11+)
     WinSeparator = {
       fg = "#9a59cf"; # line
-      bg = "NONE"; #"#220628"; # bg
+      bg = "NONE"; # bg
     };
   };
 }

@@ -37,14 +37,14 @@
 
   # Preferred: override highlights at startup
   highlightOverride = {
-    TelescopeBorder        = { fg = "#9a59cf"; bg = "NONE"; };
-    TelescopePromptBorder  = { fg = "#9a59cf"; bg = "NONE"; };
-    TelescopeResultsBorder = { fg = "#9a59cf"; bg = "NONE"; };
-    TelescopePreviewBorder = { fg = "#9a59cf"; bg = "NONE"; };
+    TelescopeBorder        = { fg = "#7aa2f7"; bg = "NONE"; };
+    TelescopePromptBorder  = { fg = "#7aa2f7"; bg = "NONE"; };
+    TelescopeResultsBorder = { fg = "#7aa2f7"; bg = "NONE"; };
+    TelescopePreviewBorder = { fg = "#7aa2f7"; bg = "NONE"; };
 
     # optional: color the title text
-    TelescopePromptTitle   = { fg = "#7aa2f7"; bg = "NONE"; };
-    TelescopeResultsTitle  = { fg = "#7aa2f7"; bg = "NONE"; };
+    TelescopePromptTitle   = { fg = "#1abc9c"; bg = "NONE"; };
+    TelescopeResultsTitle  = { fg = "#b390d6"; bg = "NONE"; };
     TelescopePreviewTitle  = { fg = "#f7768e"; bg = "NONE"; };
   };
 

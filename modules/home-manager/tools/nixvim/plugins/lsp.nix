@@ -73,32 +73,35 @@
     #  - settings: Override the default settings passed when initializing the server.
     #        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     servers = {
+      # C/C++ lsp
       clangd = {
         enable = true;
       };
-      # gopls = {
-      #   enable = true;
-      # };
+
+      # Python lsp
       pyright = {
         enable = true;
       };
+
+      # Rust lsp
       rust_analyzer = {
         enable = true;
         installCargo = false;
         installRustc = false;
       };
-      # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
-      #
-      # Some languages (like typscript) have entire language plugins that can be useful:
-      #    `https://nix-community.github.io/nixvim/plugins/typescript-tools/index.html?highlight=typescript-tools#pluginstypescript-toolspackage`
-      #
-      # But for many setups the LSP (`ts_ls`) will work just fine
+
+      # Arduino lsp
+      arduino_language_server = {
+        enable = true;
+      };
+
+      # TypeScript lsp
       ts_ls = {
         enable = true;
       };
 
       # Nix lsp
-      nil_ls = {
+      nixd = {
         enable = true;
       };
 
@@ -120,6 +123,11 @@
           #   ];
           # };
         };
+      };
+
+      # Go lsp
+      gopls = {
+        enable = true;
       };
     };
 

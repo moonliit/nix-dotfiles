@@ -27,6 +27,7 @@
       local _normal = "#f9e2af"
       local _insert = "#a6e3a1"
       local _visual = "#b4befe"
+      local _command = "#4ea1e6"
       local _terminal = "#c099ff"
       local _replace = "#f38ba8"
       local _inactive = "#7c7286"
@@ -39,9 +40,10 @@
               b = { bg = '#2a2430', fg = '#f9e2af' },               -- mid blocks
               c = { bg = '#1f1b22', fg = '#cdd6f4' },               -- main area
             },
-            insert  = { a = { bg = _insert, fg = _fg, gui = 'bold' } },
-            visual  = { a = { bg = _visual, fg = _fg, gui = 'bold' } },
-            terminal  = { a = { bg = _terminal, fg = _fg, gui = 'bold' } },
+            insert = { a = { bg = _insert, fg = _fg, gui = 'bold' } },
+            visual = { a = { bg = _visual, fg = _fg, gui = 'bold' } },
+            command = { a = { bg = _command, fg = _fg, gui = 'bold' } },
+            terminal = { a = { bg = _terminal, fg = _fg, gui = 'bold' } },
             replace = { a = { bg = _replace, fg = _fg, gui = 'bold' } },
             inactive = { a = { bg = _inactive, fg = _fg, gui = 'bold' } },
           },
