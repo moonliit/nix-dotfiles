@@ -7,89 +7,6 @@
         type = "padding";
         val = 7;
       }
-      {
-        opts = {
-          hl = "Type";
-          position = "center";
-        };
-        type = "text";
-        val = [
-          "                                                                     "
-          "       ███████████           █████      ██                     "
-          "      ███████████             █████                             "
-          "      ████████████████ ███████████ ███   ███████     "
-          "     ████████████████ ████████████ █████ ██████████████   "
-          "    █████████████████████████████ █████ █████ ████ █████   "
-          "  ██████████████████████████████████ █████ █████ ████ █████  "
-          " ██████  ███ █████████████████ ████ █████ █████ ████ ██████ "
-          " ██████   ██  ███████████████   ██ █████████████████"
-        ];
-      }
-      {
-        type = "padding";
-        val = 7;
-      }
-      {
-        type = "group";
-        val = [
-          {
-            type = "button";
-            val  = "󰈞  Find file";
-            opts = {
-              shortcut = "f";
-              position = "center";
-            };
-            on_press = {
-              __raw = "function() vim.cmd([[Telescope find_files]]) end";
-            };
-          }
-          {
-            type = "button";
-            val  = "  New file";
-            opts = {
-              shortcut = "n";
-              position = "center";
-            };
-            on_press = {
-              __raw = "function() vim.cmd([[ene | startinsert]]) end";
-            };
-          }
-          {
-            type = "button";
-            val  = "󰄉  Recent files";
-            opts = {
-              shortcut = "r";
-              position = "center";
-            };
-            on_press = {
-              __raw = "function() vim.cmd([[Telescope recent_files]]) end";
-            };
-          }
-          {
-            type = "button";
-            val  = "󰿅  Quit Neovim";
-            opts = {
-              shortcut = "q";
-              position = "center";
-            };
-            on_press = {
-              __raw = "function() vim.cmd([[qa]]) end";
-            };
-          }
-        ];
-      }
-      {
-        type = "padding";
-        val = 2;
-      }
-      {
-        opts = {
-          hl = "Keyword";
-          position = "center";
-        };
-        type = "text";
-        val = "Inspiring quote here.";
-      }
     ];
   };
 
@@ -128,8 +45,22 @@
       elseif hour >= 21 then
         greetingIndex = 5
       end
-      return datetime .. '  ' .. greetingsTable[greetingIndex] .. ', ' .. name
+      return greetingsTable[greetingIndex] .. ', ' .. name
     end
+
+    local function getUsername()
+      local n = math.random(1, 3)
+      if n == 1 then
+        return "lua"
+      elseif n == 2 then
+        return "moon"
+      else
+        return "mint"
+      end
+    end
+
+    local userName = getUsername()
+    local greeting = getGreeting(userName)
 
     local logo = [[
 
@@ -154,10 +85,7 @@
 
       ]]
 
-    local userName = 'Lazy'
-    local greeting = getGreeting(userName)
     local marginBottom = 0
-
 
     -- Highlight groups configuration for each segment
     local header_hl = {
@@ -171,52 +99,53 @@
       { { "Red", 1, 1 } },
       { { "Red", 1, 1 } },
       { { "Red", 1, 1 } },              -- Empty lines
-      { { "AlphaHeader0_0", 46, 48 } }, -- Line 10
+      { { "AlphaHeader0_0", 45, 47 } }, -- Line 10
       {                                 -- Line 11
-        { "AlphaHeader1_0", 7,  22 },
-        { "AlphaHeader1_1", 33, 40 },
-        { "AlphaHeader1_2", 40, 50 }
+        { "AlphaHeader1_0", 6,  21 },
+        { "AlphaHeader1_1", 32, 39 },
+        { "AlphaHeader1_2", 39, 49 }
       },
       { -- Line 12
-        { "AlphaHeader2_0", 6,  21 },
-        { "AlphaHeader2_1", 33, 45 },
+        { "AlphaHeader2_0", 5,  20 },
+        { "AlphaHeader2_1", 32, 44 },
+        { "AlphaHeader1_2", 45, 60 },
       },
       { -- Line 13
-        { "AlphaHeader3_0", 6,  19 },
-        { "AlphaHeader3_1", 19, 20 },
-        { "AlphaHeader3_2", 20, 35 },
-        { "AlphaHeader3_3", 35, 45 },
-        { "AlphaHeader3_4", 45, 90 },
+        { "AlphaHeader3_0", 5,  18 },
+        { "AlphaHeader3_1", 18, 19 },
+        { "AlphaHeader3_2", 19, 34 },
+        { "AlphaHeader3_3", 34, 44 },
+        { "AlphaHeader3_4", 44, 89 },
       },
       { -- Line 14
-        { "AlphaHeader4_0", 5,  18 },
-        { "AlphaHeader4_1", 18, 36 },
-        { "AlphaHeader4_2", 36, 45 },
-        { "AlphaHeader4_3", 45, 90 }
+        { "AlphaHeader4_0", 4,  17 },
+        { "AlphaHeader4_1", 17, 35 },
+        { "AlphaHeader4_2", 35, 44 },
+        { "AlphaHeader4_3", 44, 89 }
       },
       { -- Line 15
-        { "AlphaHeader5_0", 4,  17 },
-        { "AlphaHeader5_1", 17, 24 },
-        { "AlphaHeader5_2", 24, 28 },
-        { "AlphaHeader5_3", 28, 37 },
-        { "AlphaHeader5_4", 37, 46 },
-        { "AlphaHeader5_5", 46, 90 },
+        { "AlphaHeader5_0", 3,  16 },
+        { "AlphaHeader5_1", 16, 23 },
+        { "AlphaHeader5_2", 23, 27 },
+        { "AlphaHeader5_3", 27, 36 },
+        { "AlphaHeader5_4", 36, 45 },
+        { "AlphaHeader5_5", 45, 89 },
       },
       { -- Line 16
-        { "AlphaHeader6_0", 2,  17 },
-        { "AlphaHeader6_1", 17, 38 },
-        { "AlphaHeader6_2", 38, 45 },
-        { "AlphaHeader6_3", 46, 90 },
+        { "AlphaHeader6_0", 1,  16 },
+        { "AlphaHeader6_1", 16, 37 },
+        { "AlphaHeader6_2", 37, 44 },
+        { "AlphaHeader6_3", 45, 89 },
       },
       { -- Line 17
-        { "AlphaHeader7_0", 1,  17 },
-        { "AlphaHeader7_1", 17, 38 },
-        { "AlphaHeader7_2", 38, 45 },
-        { "AlphaHeader7_3", 46, 90 },
+        { "AlphaHeader7_0", 0,  16 },
+        { "AlphaHeader7_1", 16, 37 },
+        { "AlphaHeader7_2", 37, 44 },
+        { "AlphaHeader7_3", 45, 89 },
       },
       { -- Line 18
-        { "AlphaHeader8_0", 1,  37 },
-        { "AlphaHeader8_1", 37, 91 },
+        { "AlphaHeader8_0", 0,  36 },
+        { "AlphaHeader8_1", 36, 90 },
       }
     }
 
@@ -280,6 +209,14 @@
     local adjustedLogo                = logo .. '\n' .. paddedGreeting .. margin
 
     local init_path                   = vim.fn.stdpath('config')
+
+    -- create greeting section
+    dashboard.section.greeting = {
+      type = "text",
+      val = greeting,
+      opts = { position = "center", hl = "MatchParen" },
+    }
+
     dashboard.section.buttons.val     = {
       dashboard.button('f', '󰮗  Find file', ':silent Telescope find_files hidden=true no_ignore=true <CR>'),
       dashboard.button('n', '  New file', ':silent ene <BAR> startinsert<CR>'),
@@ -287,13 +224,9 @@
       dashboard.button('r', '󰊢  Git files', ':silent Telescope git_files<CR>'),
       dashboard.button('q', '󰿅  Quit', '<cmd>qa<CR>'),
     }
-
     dashboard.section.buttons.opts.hl = 'AlphaHeader1_0'
-    -- local function footer()
-    -- 	return "Footer Text"
-    -- end
 
-    -- dashboard.section.footer.val = vim.split('\n\n' .. getGreeting 'Lazy', '\n')
+    --dashboard.section.footer.val = vim.split('\n\n' .. getGreeting 'lua', '\n')
 
     vim.api.nvim_create_autocmd('User', {
       pattern = 'LazyVimStarted',
@@ -337,6 +270,17 @@
       end,
     })
     dashboard.opts.opts.noautocmd = true
+
+    dashboard.opts.layout = {
+      { type = "padding", val = 2 },
+      dashboard.section.header,
+      dashboard.section.greeting,
+      { type = "padding", val = 2 },
+      dashboard.section.buttons,
+      { type = "padding", val = 1 },
+      dashboard.section.footer,
+    }
+
     alpha.setup(dashboard.opts)
   '';
 }

@@ -12,8 +12,8 @@
 
       color_align = {
         mode = "horizontal";
-	custom_colors = [ ];
-	fore_back = null;
+        custom_colors = [ ];
+        fore_back = null;
       };
 
       backend = "fastfetch";
@@ -24,4 +24,3 @@
     };
   };
 }
-

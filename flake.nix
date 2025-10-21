@@ -40,33 +40,43 @@
     nixowos.url = "github:yunfachi/nixowos";
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
     let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      # standalone home-manager configuration
+      homeConfigurations.moonliit = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit inputs; };
+
+        modules = [
+          ./modules/home-manager/home.nix
+          inputs.nixvim.homeModules.nixvim
+          inputs.nix4nvchad.homeManagerModules.default
+          inputs.nixcord.homeModules.nixcord
+          inputs.nixowos.homeModules.default
+
+          ({ config, pkgs, lib, ... }: {
+            # allow unfree packages
+            nixpkgs.config.allowUnfree = true;
+            # add overlays
+            nixpkgs.overlays = [
+              inputs.nur.overlays.default
+              inputs.rust-overlay.overlays.default
+            ];
+          })
+        ];
+      };
+
+      # nixos configuration
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = system;
         specialArgs = { inherit inputs; };
 
         modules = [
           ./hosts/nixos/configuration.nix
-
-          inputs.home-manager.nixosModules.default
-          {
-            # home-manager settings
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.moonliit = import ./modules/home-manager/home.nix;
-
-            # Shared home-manager modules
-            home-manager.sharedModules = [
-              inputs.nixvim.homeModules.nixvim
-              inputs.nix4nvchad.homeManagerModules.default
-              inputs.nixcord.homeModules.nixcord
-              inputs.nixowos.homeModules.default
-            ];
-          }
 
           ({ config, pkgs, lib, ... }: {
             # allow unfree packages

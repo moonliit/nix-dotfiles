@@ -18,6 +18,7 @@ let
     zsh
     oh-my-zsh
     tmux
+    home-manager
   ];
 
   # Compilers, build tools, debuggers

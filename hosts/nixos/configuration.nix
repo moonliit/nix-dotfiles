@@ -13,17 +13,6 @@ in
   # Host level overrides
   networking.hostName = "nixos";
 
-  # Enable home manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    useUserPackages = true;
-    useGlobalPkgs = true;
-    backupFileExtension = "backup";
-    users = {
-      "moonliit" = import ../../modules/home-manager/home.nix;
-    };
-  };
-
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
