@@ -1,5 +1,4 @@
 { pkgs }:
-
 with pkgs;
 
 let
@@ -38,11 +37,12 @@ let
     rustc rustup cargo
     jdk
     mpich
+    openmpi
   ];
 
   # Language servers
   lsps = [
-    nil
+    nixd
     rust-analyzer
     lua-language-server
   ];
@@ -72,7 +72,7 @@ let
     pywal
     zoxide
     cliphist
-    wl-clipboard
+    wl-clipboard-rs
   ];
 
   # Multimedia / audio
@@ -106,6 +106,7 @@ let
     wev
     swaynotificationcenter
     swayosd
+    dunst
     rofi-wayland
     iwd impala
   ];
@@ -141,18 +142,18 @@ let
   ];
 
 in
-  editors
-  ++ terminals_and_shells
-  ++ build_tools
-  ++ languages
-  ++ lsps
-  ++ dev_utils
-  ++ cli_tools
-  ++ productivity
-  ++ multimedia
-  ++ communication
-  ++ wayland_and_ui
-  ++ system_utils
-  ++ docs_and_office
-  ++ containers
-  ++ browsers
+  editors ++
+  terminals_and_shells ++
+  build_tools ++
+  languages ++
+  lsps ++
+  dev_utils ++
+  cli_tools ++
+  productivity ++
+  multimedia ++
+  communication ++
+  wayland_and_ui ++
+  system_utils ++
+  docs_and_office ++
+  containers ++
+  browsers

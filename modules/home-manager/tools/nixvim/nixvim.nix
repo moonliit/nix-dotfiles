@@ -324,7 +324,7 @@
       lz-n.enable = true;
       nix.enable = true;
       yanky.enable = true;
-      visual-multi.enable = true;
+      #visual-multi.enable = true;
     };
 
     extraConfigLuaPost = builtins.readFile ./extra.lua;

@@ -2,35 +2,29 @@
   plugins.telescope = {
     enable = true;
 
-    /*
-    lazyLoad = {
-      enable = true;
-      settings = {
-        cmd = "Telescope";
-        keys = [
-          { key = "<C-m>"; command = "<cmd>Telescope find_files<CR>"; desc = "Telescope: find files"; }
-          { key = "<C-o>"; command = "<cmd>Telescope live_grep<CR>";  desc = "Telescope: live grep"; }
-          { key = "<C-p>"; command = "<cmd>Telescope git_files<CR>";  desc = "Telescope: git files"; }
-        ];
-      };
-    };
-    */
-
-    settings = {
-      defaults = {
-        file_ignore_patterns = [
-          "node_modules"
-          ".git"
-        ];
-      };
-    };
-
     keymaps = {
       "<C-m>" = "find_files";    # find files
       "<C-o>" = "live_grep";     # grep in project
       "<C-p>" = {
         action = "git_files";
         options = { desc = "Telescope: git files"; };
+      };
+    };
+
+    # Enable Telescope extensions
+    extensions = {
+      frecency.enable = true;
+      file-browser.enable = true;
+      fzf-native.enable = true;
+      ui-select.enable = true;
+    };
+    # Settings
+    settings = {
+      defaults = {
+        file_ignore_patterns = [
+          "node_modules"
+          ".git"
+        ];
       };
     };
   };
