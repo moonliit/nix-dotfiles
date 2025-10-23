@@ -7,7 +7,6 @@ let
     vim
     helix
     vscode-fhs
-    zed-editor-fhs
     gedit
     arduino-ide
   ];

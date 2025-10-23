@@ -45,7 +45,7 @@
       elseif hour >= 21 then
         greetingIndex = 5
       end
-      return greetingsTable[greetingIndex] .. ', ' .. name
+      return greetingsTable[greetingIndex] .. ', ' .. name .. '!'
     end
 
     local function getUsername()
@@ -76,7 +76,7 @@
                                               
        ███████████           █████      ██
       ███████████             █████ 
-      ████████████████ ███████████ ███   ███████
+      █████████ ███████ ███████████ ███   ███████
      ████████████████ ████████████ █████ ██████████████
     █████████████████████████████ █████ █████ ████ █████
   ██████████████████████████████████ █████ █████ ████ █████
@@ -149,37 +149,82 @@
       }
     }
 
-    vim.api.nvim_set_hl(0, "AlphaHeader0_0", { fg = "#a6c9ab" })
-    vim.api.nvim_set_hl(0, "AlphaHeader1_0", { fg = "#bb7744" })
-    vim.api.nvim_set_hl(0, "AlphaHeader1_1", { fg = "#386c3f" })
-    vim.api.nvim_set_hl(0, "AlphaHeader1_2", { fg = "#a6c9ab" })
-    vim.api.nvim_set_hl(0, "AlphaHeader2_0", { fg = "#be7d46" })
-    vim.api.nvim_set_hl(0, "AlphaHeader2_1", { fg = "#3d7344" })
-    vim.api.nvim_set_hl(0, "AlphaHeader3_0", { fg = "#c18250" })
-    vim.api.nvim_set_hl(0, "AlphaHeader3_1", { fg = "#5c441e" })
-    vim.api.nvim_set_hl(0, "AlphaHeader3_2", { fg = "#d6c383" })
-    vim.api.nvim_set_hl(0, "AlphaHeader3_3", { fg = "#407b48" })
-    vim.api.nvim_set_hl(0, "AlphaHeader3_4", { fg = "#98c09c" })
-    vim.api.nvim_set_hl(0, "AlphaHeader4_0", { fg = "#c38950" })
-    vim.api.nvim_set_hl(0, "AlphaHeader4_1", { fg = "#e0c785" })
-    vim.api.nvim_set_hl(0, "AlphaHeader4_2", { fg = "#44844b" })
-    vim.api.nvim_set_hl(0, "AlphaHeader4_3", { fg = "#a0c4a3" })
-    vim.api.nvim_set_hl(0, "AlphaHeader5_0", { fg = "#c58f56" })
-    vim.api.nvim_set_hl(0, "AlphaHeader5_1", { fg = "#e2cb85" })
-    vim.api.nvim_set_hl(0, "AlphaHeader5_2", { fg = "#5c441e" })
-    vim.api.nvim_set_hl(0, "AlphaHeader5_3", { fg = "#e2cb85" })
-    vim.api.nvim_set_hl(0, "AlphaHeader5_4", { fg = "#488c51" })
-    vim.api.nvim_set_hl(0, "AlphaHeader5_5", { fg = "#a6c9ab" })
-    vim.api.nvim_set_hl(0, "AlphaHeader6_0", { fg = "#c7955b" })
-    vim.api.nvim_set_hl(0, "AlphaHeader6_1", { fg = "#e3cf88" })
-    vim.api.nvim_set_hl(0, "AlphaHeader6_2", { fg = "#4d9356" })
-    vim.api.nvim_set_hl(0, "AlphaHeader6_3", { fg = "#aecdb3" })
-    vim.api.nvim_set_hl(0, "AlphaHeader7_0", { fg = "#c89b62" })
-    vim.api.nvim_set_hl(0, "AlphaHeader7_1", { fg = "#e5d38a" })
-    vim.api.nvim_set_hl(0, "AlphaHeader7_2", { fg = "#509b59" })
-    vim.api.nvim_set_hl(0, "AlphaHeader7_3", { fg = "#b7d1b9" })
-    vim.api.nvim_set_hl(0, "AlphaHeader8_0", { fg = "#5c441e" })
-    vim.api.nvim_set_hl(0, "AlphaHeader8_1", { fg = "#2e4e2a" })
+    local nb = {
+      yellow1 = "#fff238",
+      yellow2 = "#fff04b",
+      yellow3 = "#ffee5d",
+      yellow4 = "#ffec70",
+      yellow5 = "#ffea82",
+      yellow6 = "#ffe894",
+      yellow7 = "#ffe6a7",
+
+      purple1 = "#5318c2",
+      purple2 = "#622ac6",
+      purple3 = "#6c37c9",
+      purple4 = "#7643cc",
+      purple5 = "#804fcf",
+      purple6 = "#8959d1",
+      purple7 = "#9467d5",
+
+      white1 = "#c1c1c1",
+      white2 = "#cbcbcb",
+      white3 = "#d4d4d4",
+      white4 = "#dddddd",
+      white5 = "#e7e7e7",
+      white6 = "#f0f0f0",
+      white7 = "#fafafa",
+
+      black  = "#1A0F18",
+    }
+
+    -- Map each AlphaHeader group to a color chosen from the palette above.
+    -- (These group names match the ones in your header_hl table earlier.)
+    local header_colors = {
+      AlphaHeader0_0 = nb.purple1,
+
+      AlphaHeader1_0 = nb.yellow1,
+      AlphaHeader1_1 = nb.purple1,
+      AlphaHeader1_2 = nb.purple1,
+
+      AlphaHeader2_0 = nb.yellow2,
+      AlphaHeader2_1 = nb.purple2,
+
+      AlphaHeader3_0 = nb.yellow3,
+      AlphaHeader3_1 = nb.white3,
+      AlphaHeader3_2 = nb.white3,
+      AlphaHeader3_3 = nb.purple3,
+      AlphaHeader3_4 = nb.purple3,
+
+      AlphaHeader4_0 = nb.yellow4,
+      AlphaHeader4_1 = nb.white4,
+      AlphaHeader4_2 = nb.purple4,
+      AlphaHeader4_3 = nb.purple4,
+
+      AlphaHeader5_0 = nb.yellow5,
+      AlphaHeader5_1 = nb.white5,
+      AlphaHeader5_2 = nb.black,
+      AlphaHeader5_3 = nb.white5,
+      AlphaHeader5_4 = nb.purple5,
+      AlphaHeader5_5 = nb.purple5,
+
+      AlphaHeader6_0 = nb.yellow6,
+      AlphaHeader6_1 = nb.white6,
+      AlphaHeader6_2 = nb.purple6,
+      AlphaHeader6_3 = nb.purple6,
+
+      AlphaHeader7_0 = nb.yellow7,
+      AlphaHeader7_1 = nb.white7,
+      AlphaHeader7_2 = nb.purple7,
+      AlphaHeader7_3 = nb.purple7,
+
+      AlphaHeader8_0 = nb.black,
+      AlphaHeader8_1 = nb.black,
+    }
+
+    -- apply them programmatically (keeps the file compact)
+    for name, hex in pairs(header_colors) do
+      vim.api.nvim_set_hl(0, name, { fg = hex })
+    end
 
     local utils = require('alpha.utils')
 

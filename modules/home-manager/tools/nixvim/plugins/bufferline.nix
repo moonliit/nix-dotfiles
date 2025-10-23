@@ -175,7 +175,7 @@ in
   # Ctrl-number mappings 1..9 (with literals embedded into the Lua body)
   ++ (lib.concatMap (n: [
     {
-      key = toString n;
+      key = "<A-" + toString n + ">";
       mode = "n";
       action.__raw = ''
         function()

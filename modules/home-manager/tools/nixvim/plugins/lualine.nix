@@ -2,6 +2,8 @@
   plugins.lualine = {
     enable = true;
 
+    #CDD6F4
+
     settings = {
       sections = {
         lualine_a = [ "mode" ];
@@ -23,6 +25,7 @@
     };
 
     luaConfig.post = ''
+      -- status colors
       local _fg = "#1f1b22"
       local _normal = "#f9e2af"
       local _insert = "#a6e3a1"
@@ -32,20 +35,24 @@
       local _replace = "#f38ba8"
       local _inactive = "#7c7286"
 
+      local function get_options(color_name)
+        return {
+          a = { bg = color_name, fg = _fg, gui = 'bold' }, -- active mode block
+          b = { bg = '#2a2430', fg = color_name }, -- mid blocks
+          c = { bg = '#1f1b22', fg = color_name }, -- main area
+        }
+      end
+
       require('lualine').setup {
         options = {
           theme = {
-            normal = {
-              a = { bg = _normal, fg = _fg, gui = 'bold' },  -- active mode block
-              b = { bg = '#2a2430', fg = '#f9e2af' },               -- mid blocks
-              c = { bg = '#1f1b22', fg = '#cdd6f4' },               -- main area
-            },
-            insert = { a = { bg = _insert, fg = _fg, gui = 'bold' } },
-            visual = { a = { bg = _visual, fg = _fg, gui = 'bold' } },
-            command = { a = { bg = _command, fg = _fg, gui = 'bold' } },
-            terminal = { a = { bg = _terminal, fg = _fg, gui = 'bold' } },
-            replace = { a = { bg = _replace, fg = _fg, gui = 'bold' } },
-            inactive = { a = { bg = _inactive, fg = _fg, gui = 'bold' } },
+            normal = get_options(_normal),
+            insert = get_options(_insert),
+            visual = get_options(_visual),
+            command = get_options(_command),
+            terminal = get_options(_terminal),
+            replace = get_options(_replace),
+            inactive = get_options(_inactive),
           },
           section_separators = { left = '', right = '' },
           component_separators = { left = '', right = '' },
