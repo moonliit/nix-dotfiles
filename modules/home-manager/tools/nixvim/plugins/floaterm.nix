@@ -2,11 +2,11 @@
   plugins.floaterm = {
     enable = true;
     settings = {
-      width = 0.9;
-      height = 0.3;
-      position = "bottom";
-      wintype = "split";
-      autoinsert = false;
+      width = 0.75; #0.9;
+      height = 0.75; #0.3;
+      position = "center"; #"bottom";
+      wintype = "float"; #"split";
+      autoinsert = true; #false;
       autoclose = 1;
 
       borderchars = "─│─│┌┐┘└"; # top, right, bottom, left, etc

@@ -16,6 +16,8 @@
       frecency.enable = true;
       file-browser.enable = true;
       fzf-native.enable = true;
+      manix.enable = true;
+      media-files.enable = true;
       ui-select.enable = true;
     };
     # Settings

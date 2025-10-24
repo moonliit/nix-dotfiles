@@ -9,6 +9,7 @@ let
     vscode-fhs
     gedit
     arduino-ide
+    eagle
   ];
 
   # Terminal & shells
@@ -64,6 +65,7 @@ let
     yazi
     tree-sitter
     unzip
+    manix
   ];
 
   # Productivity / shell niceties
