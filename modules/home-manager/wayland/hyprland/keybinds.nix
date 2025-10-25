@@ -13,7 +13,6 @@ in
         "SUPER, TAB, cyclenext" # Window switch
         "SUPER, W, killactive" # Close window
         "SUPER, F, fullscreen" # Toggle fullscreen
-        #"SUPER SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy" # Screenshot
         "SUPER SHIFT, S, exec, hyprshot -s -z -m region --clipboard-only" # Screenshot
         "SUPER SHIFT, A, exec, hyprpicker -a" # Color picker
         ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise" # Raise volume
@@ -45,9 +44,6 @@ in
         "SUPER+CTRL, l, resizeactive, 50 0"
         "SUPER+CTRL, k, resizeactive, 0 -50"
         "SUPER+CTRL, j, resizeactive, 0 50"
-
-        # Toggle floating window
-        #"SUPER SHIFT, SPACE, togglefloating"
       ]
 
         # Move to a specific workspace
@@ -62,7 +58,7 @@ in
       ];
 
       bindc = [
-        "ALT, mouse:272, togglefloating" # Toggle floating window
+        "SUPER, mouse:272, togglefloating" # Toggle floating window
       ];
 
       binds = {
@@ -74,21 +70,5 @@ in
         (toString n)
       ]) (lib.range 1 numWorkspaces));
     };
-
-    extraConfig = ''
-      # hold SUPER + LMB to move floating window (drag)
-      #bindm = SUPER, mouse:272, movewindow
-
-      # hold SUPER + RMB to resize floating window (drag)
-      #bindm = SUPER, mouse:273, resizewindow
-
-      # click ALT + LMB to toggle floating on/off
-      #bindc = ALT, mouse:272, togglefloating
-
-      # be picky about what counts as a drag (optional, in pixels)
-      #binds {
-      #  drag_threshold = 10
-      #}
-    '';
   };
 }

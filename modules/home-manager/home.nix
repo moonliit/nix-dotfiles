@@ -23,6 +23,7 @@
     ./wayland/hypridle/hypridle.nix
     ./wayland/waybar/waybar.nix
     ./wayland/wlogout/wlogout.nix
+    ./wayland/dunst/dunst.nix
     # tools
     ./tools/rofi/rofi.nix
     ./tools/swayosd/swayosd.nix
