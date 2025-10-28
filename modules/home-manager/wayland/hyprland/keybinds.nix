@@ -10,6 +10,7 @@ in
       bind = [
         "SUPER, RETURN, exec, kitty" # Terminal
         "SUPER, R, exec, rofi -show drun -show-icons" # App launcher
+        "SUPER, S, exec, nwg-drawer" # App menu
         "SUPER, TAB, cyclenext" # Window switch
         "SUPER, W, killactive" # Close window
         "SUPER, F, fullscreen" # Toggle fullscreen

@@ -111,6 +111,7 @@ let
     dunst
     rofi-wayland
     iwd impala
+    nwg-drawer
   ];
 
   # System utilities
@@ -121,6 +122,7 @@ let
     acpi
     tty-clock
     nur.repos.charmbracelet.crush
+    nautilus
   ];
 
   # Docs & office
