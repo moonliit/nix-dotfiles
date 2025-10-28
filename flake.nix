@@ -20,9 +20,10 @@
     };
 
     # Extra packages
-    nixvim.url = "github:nix-community/nixvim";
     nixcord.url = "github:kaylorben/nixcord";
     nixowos.url = "github:yunfachi/nixowos";
+    nixvim.url = "github:nix-community/nixvim";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
@@ -37,10 +38,11 @@
         extraSpecialArgs = { inherit inputs; };
 
         modules = [
-          ./home
-          inputs.nixvim.homeModules.nixvim
+          ./home/home.nix
           inputs.nixcord.homeModules.nixcord
           inputs.nixowos.homeModules.default
+          inputs.nixvim.homeModules.nixvim
+          inputs.zen-browser.homeModules.beta
 
           ({ config, pkgs, lib, ... }: {
             # allow unfree packages
