@@ -19,23 +19,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nvchad-starter = {
-      url = "github:moonliit/NvChadConfig";
-      flake = false;
-    };
-
-    nix4nvchad = {
-      url = "github:nix-community/nix4nvchad";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nvchad-starter.follows = "nvchad-starter";
-    };
-
     # Extra packages
+    nixvim.url = "github:nix-community/nixvim";
     nixcord.url = "github:kaylorben/nixcord";
     nixowos.url = "github:yunfachi/nixowos";
   };
@@ -52,7 +37,7 @@
         extraSpecialArgs = { inherit inputs; };
 
         modules = [
-          ./modules/home-manager/home.nix
+          ./home
           inputs.nixvim.homeModules.nixvim
           inputs.nix4nvchad.homeManagerModules.default
           inputs.nixcord.homeModules.nixcord

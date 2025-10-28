@@ -1,0 +1,48 @@
+window {
+    font-family: "0xProto Nerd Font";
+    font-size: 18px;
+    background-color: rgba(36, 39, 58, 0.9);
+}
+
+button {
+	border-radius: 0;
+	border-color: #b7bdf8;
+	text-decoration-color: #cad3f5;
+	color: #cad3f5;
+	background-color: #1e2030;
+	border-style: solid;
+	border-width: 1px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+}
+
+button:focus, button:active, button:hover {
+	/* 20% Overlay 2, 80% mantle */
+	background-color: rgb(53, 57, 75);
+	outline-style: none;
+}
+
+button#lock {
+    background-image: url("/home/moonliit/Dotfiles/home/wayland/wlogout/icons/lock.png");
+}
+
+button#logout {
+    background-image: url("/home/moonliit/Dotfiles/home/wayland/wlogout/icons/logout.png");
+}
+
+button#suspend {
+    background-image: url("/home/moonliit/Dotfiles/home/wayland/wlogout/icons/suspend.png");
+}
+
+button#hibernate {
+    background-image: url("/home/moonliit/Dotfiles/home/wayland/wlogout/icons/hibernate.png");
+}
+
+button#reboot {
+    background-image: url("/home/moonliit/Dotfiles/home/wayland/wlogout/icons/reboot.png");
+}
+
+button#shutdown {
+    background-image: url("/home/moonliit/Dotfiles/home/wayland/wlogout/icons/shutdown.png");
+}
