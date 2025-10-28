@@ -39,7 +39,6 @@
         modules = [
           ./home
           inputs.nixvim.homeModules.nixvim
-          inputs.nix4nvchad.homeManagerModules.default
           inputs.nixcord.homeModules.nixcord
           inputs.nixowos.homeModules.default
 
