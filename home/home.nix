@@ -28,7 +28,7 @@ in
     ./wayland/wlogout/
     ./wayland/swaync/
     # tools
-    ./tools/rofi/
+    ./tools/wofi/
     ./tools/swayosd/
     ./tools/helix/
     ./tools/nixvim/

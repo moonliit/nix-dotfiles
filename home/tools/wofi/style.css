@@ -1,0 +1,134 @@
+/* Converted from your "rounded-template.rasi" -> Wofi CSS
+   Notes:
+   - Some GTK CSS/wofi selectors are used: window, #outer-box, #input, #scroll, #inner-box, row, row:selected
+   - Colors use @define-color where possible and rgba() for alpha.
+   - tweak small values (padding, radii) to taste.
+*/
+
+/* --- colors (mapped from your implementation) --- */
+@define-color fg0 #E6E6E6;
+@define-color fg1 #FFFFFF;
+@define-color fg2 #969696;
+@define-color fg3 #3D3D3D;
+
+@define-color bg0 #212121; /* used with alpha where necessary */
+@define-color bg1 #2A2A2A;
+@define-color bg2 #3D3D3D;
+@define-color bg3 #AB47BC;
+
+/* --- window --- */
+window {
+  font-family: "Roboto";
+  font-size: 12px;
+  color: @fg0; /* general text color */
+  background-color: rgba(33,33,33,0.95); /* bg0 + alpha (approx #212121F2) */
+  border-radius: 24px;
+  padding: 12px; /* matches mainbox padding */
+}
+
+/* outer container that everything else sits inside of */
+#outer-box {
+  background-color: transparent;
+}
+
+/* --- input (search box) --- */
+/* maps to your inputbar { background-color: @bg1; border: 2px; border-radius: 16px; ... } */
+#input {
+  background-color: @bg1;
+  border: 2px solid rgba(171,71,188,0.95); /* bg3 */
+  border-radius: 16px;
+  padding: 8px 16px;
+  min-height: 36px;
+  margin-bottom: 8px;
+}
+
+/* the text entry inside the input */
+#input entry {
+  color: @fg0;
+  padding: 0;
+  margin: 0;
+}
+
+/* placeholder color — GTK placeholder support varies; this is best-effort */
+#input entry::-moz-placeholder { color: @fg3; } /* firefox-ish */
+#input entry::placeholder { color: @fg3; }      /* standard */
+
+/* prompt text color (like `prompt { text-color: @fg2 }`) */
+#input label {
+  color: @fg2;
+  padding-right: 8px;
+}
+
+/* --- message box (like rofi message) --- */
+#message {
+  margin-top: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(61,61,61,0.5);
+  background-color: rgba(61,61,61,0.5); /* bg2 with alpha */
+  color: @fg1;
+  padding: 8px 12px;
+}
+
+/* --- list / results --- */
+#scroll {
+  background-color: transparent;
+  margin-top: 12px;
+  max-height: 320px; /* lines: 8 in your rofi -> approx */
+}
+
+/* inner box that holds rows */
+#inner-box {
+  spacing: 0;
+}
+
+/* each result row (maps from element { padding: 8px 16px; spacing: 8px; border-radius: 16px; }) */
+row {
+  border-radius: 16px;
+  padding: 8px 16px;
+  min-height: 36px;
+  spacing: 8px;
+  margin: 2px 0;
+  color: @fg0;
+}
+
+/* alternate row styling (like element alternate) */
+row:nth-child(2n) {
+  /* keep subtle — developer preferences; leave transparent to keep rounded popup look */
+  background-color: transparent;
+}
+
+/* selected/focused row (maps to element selected normal -> background-color @bg3) */
+row:selected, row:selected:focus {
+  background-color: rgba(171,71,188,0.95); /* bg3 */
+  color: @fg1;
+}
+
+/* if you want the active text color to invert similarly to 'element normal active { text-color: @bg3 }' */
+row:selected label, row:selected .title {
+  color: @fg1;
+}
+
+/* icons inside rows */
+image, .icon {
+  min-width: 1em;
+  min-height: 1em;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* element text mapping */
+label, .title, .secondary {
+  color: inherit;
+  vertical-align: middle;
+}
+
+/* small tweaks for hover */
+row:hover {
+  /* a tiny highlight on hover when not selected */
+  background-color: rgba(171,71,188,0.12);
+}
+
+/* drop shadow (if supported by compositor/gtk) */
+window {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}

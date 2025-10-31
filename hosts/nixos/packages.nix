@@ -108,7 +108,8 @@ let
     wev
     swaynotificationcenter
     swayosd
-    rofi-wayland
+    wofi
+    wofi-emoji
     fuzzel
     iwd impala
     nwg-drawer
