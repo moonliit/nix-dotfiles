@@ -55,6 +55,12 @@ in
   services.xserver.enable = false;
   services.picom.enable = false;
 
+  # Enable XDG portal
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
+
   # Enable seatd (for seat/session management in Wayland)
   services.seatd.enable = true;
 

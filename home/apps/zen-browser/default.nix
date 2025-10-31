@@ -5,41 +5,19 @@
     enable = true;
     nativeMessagingHosts = [pkgs.firefoxpwa];
 
-    extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
-      bitwarden
-      proton-pass
-      vimium
-      darkreader
-      ublock-origin
-    ];
-
-    policies = {
-      AutofillAddressEnabled = false;
-      AutofillCreditCardEnabled = false;
-      DisableAppUpdate = true;
-      DisableFeedbackCommands = true;
-      DisableFirefoxStudies = true;
-      DisablePocket = true;
-      DisableTelemetry = true;
-      DontCheckDefaultBrowser = true;
-      NoDefaultBookmarks = true;
-      OfferToSaveLogins = false;
-      EnableTrackingProtection = {
-        Value = true;
-        Locked = true;
-        Cryptomining = true;
-        Fingerprinting = true;
-      };
-    };
-
     profiles.moonliit = {
       id = 0;
       isDefault = true;
 
-      settings = {
-        # Enable all extensions by default
-        "extensions.autoDisableScopes" = 0;
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+        bitwarden
+        proton-pass
+        vimium
+        darkreader
+        ublock-origin
+      ];
 
+      settings = {
         # Don’t clear cookies/site data on shutdown
         "privacy.sanitize.sanitizeOnShutdown" = false;
         "privacy.clearOnShutdown.cookies" = false;
@@ -65,5 +43,25 @@
         "extensions.activeThemeID" = "firefox-dark@mozilla.org";
       };
     };
+
+    policies = {
+      AutofillAddressEnabled = false;
+      AutofillCreditCardEnabled = false;
+      DisableAppUpdate = true;
+      DisableFeedbackCommands = true;
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+      DisableTelemetry = true;
+      DontCheckDefaultBrowser = true;
+      NoDefaultBookmarks = true;
+      OfferToSaveLogins = false;
+      EnableTrackingProtection = {
+        Value = true;
+        Locked = true;
+        Cryptomining = true;
+        Fingerprinting = true;
+      };
+    };
+
   };
 }

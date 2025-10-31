@@ -13,30 +13,30 @@ in
 
   imports = [
     # terminals
-    ./terminals/kitty
-    ./terminals/zsh
-    ./terminals/starship
-    ./terminals/fastfetch
-    ./terminals/hyfetch
-    ./terminals/wal
-    ./terminals/nixowos
+    ./terminals/kitty/
+    ./terminals/zsh/
+    ./terminals/starship/
+    ./terminals/fastfetch/
+    ./terminals/hyfetch/
+    ./terminals/wal/
+    ./terminals/nixowos/
     # wayland
-    ./wayland/hyprland
-    ./wayland/hyprlock
-    ./wayland/hypridle
-    ./wayland/waybar
-    ./wayland/wlogout
-    ./wayland/dunst
+    ./wayland/hyprland/
+    ./wayland/hyprlock/
+    ./wayland/hypridle/
+    ./wayland/waybar/
+    ./wayland/wlogout/
+    ./wayland/swaync/
     # tools
-    ./tools/rofi
-    ./tools/swayosd
-    ./tools/helix
-    ./tools/nixvim
-    ./tools/yazi
+    ./tools/rofi/
+    ./tools/swayosd/
+    ./tools/helix/
+    ./tools/nixvim/
+    ./tools/yazi/
     # apps
-    ./apps/vscode
-    ./apps/nixcord
-    ./apps/librewolf
-    ./apps/zen-browser
+    ./apps/vscode/
+    ./apps/nixcord/
+    ./apps/librewolf/
+    ./apps/zen-browser/
   ];
 }

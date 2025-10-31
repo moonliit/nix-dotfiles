@@ -108,8 +108,8 @@ let
     wev
     swaynotificationcenter
     swayosd
-    dunst
     rofi-wayland
+    fuzzel
     iwd impala
     nwg-drawer
   ];
