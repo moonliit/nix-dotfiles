@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nur = {
       url = "github:nix-community/NUR";
@@ -19,8 +20,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    dms-cli = {
+      url = "github:AvengeMedia/danklinux";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.dgop.follows = "dgop";
+      inputs.dms-cli.follows = "dms-cli";
+    };
+
     # Extra packages
-    dms.url = "github:AvengeMedia/DankMaterialShell";
     nixcord.url = "github:kaylorben/nixcord";
     nixowos.url = "github:yunfachi/nixowos";
     nixvim.url = "github:nix-community/nixvim";
@@ -30,13 +47,24 @@
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      pkgs-unstable = import inputs.nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
       # standalone home-manager configuration
       homeConfigurations.moonliit = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
+
+        extraSpecialArgs = {
+          inherit inputs;
+          inherit pkgs-unstable;
+        };
 
         modules = [
           ./home/home.nix
@@ -60,7 +88,7 @@
 
       # nixos configuration
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = system;
+        inherit system;
         specialArgs = { inherit inputs; };
 
         modules = [
