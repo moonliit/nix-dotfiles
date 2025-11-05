@@ -20,6 +20,7 @@
     };
 
     # Extra packages
+    dms.url = "github:AvengeMedia/DankMaterialShell";
     nixcord.url = "github:kaylorben/nixcord";
     nixowos.url = "github:yunfachi/nixowos";
     nixvim.url = "github:nix-community/nixvim";
@@ -39,6 +40,7 @@
 
         modules = [
           ./home/home.nix
+          inputs.dms.homeModules.dankMaterialShell.default
           inputs.nixcord.homeModules.nixcord
           inputs.nixowos.homeModules.default
           inputs.nixvim.homeModules.nixvim

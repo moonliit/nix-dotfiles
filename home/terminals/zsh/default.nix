@@ -7,11 +7,17 @@
     enableCompletion = true;
 
     shellAliases = {
-      # browse
       rebuild = "sudo nixos-rebuild switch --flake ~/Dotfiles";
       switch = "home-manager switch --flake ~/Dotfiles";
       collect = "sudo nix-collect-garbage -d";
     };
+
+    plugins = [
+      {
+        name = "zsh-autocomplete";
+        src = pkgs.zsh-autocomplete;
+      }
+    ];
 
     initContent = ''
       hyfetch

@@ -14,7 +14,7 @@
         # Layout: left | center | right
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "pulseaudio" "backlight" "battery" "network" "custom/powermenu" ];
+        modules-right = [ "tray" "pulseaudio" "backlight" "battery" "network" "custom/swaync" "custom/powermenu" ];
 
         # Clock
         "clock" = {
@@ -33,7 +33,7 @@
 
         # Brightness (via light)
         "backlight" = {
-          format = " {percent}%";
+          format = "󰃠 {percent}%";
           interval = 2;
         };
 
@@ -54,7 +54,29 @@
           on-click = "kitty -e impala";
         };
 
-        # Custom power menu
+        # Notification center
+        "custom/swaync" = {
+          tooltip = true;
+          format = "{icon}";
+          format-icons = {
+            notification = "󱅫";
+            none = "󰂜";
+            dnd-notification = "󰂠";
+            dnd-none = "󰪓";
+            inhibited-notification = "󰂛";
+            inhibited-none = "󰪑";
+            dnd-inhibited-notification = "󰂛";
+            dnd-inhibited-none = "󰪑";
+          };
+          return-type = "json";
+          exec-if = "which swaync-client";
+          exec = "swaync-client -swb";
+          on-click = "swaync-client -t -sw";
+          on-click-right = "swaync-client -d -sw";
+          escape = true;
+        };
+
+        # Power menu
         "custom/powermenu" = {
           format = "⏻";
           tooltip = false;

@@ -17,6 +17,7 @@ let
     kitty
     zsh
     oh-my-zsh
+    zsh-autocomplete
     tmux
     home-manager
   ];
@@ -124,6 +125,7 @@ let
     tty-clock
     nur.repos.charmbracelet.crush
     nautilus
+    appimage-run
   ];
 
   # Docs & office

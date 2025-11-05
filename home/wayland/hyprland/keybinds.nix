@@ -9,7 +9,8 @@ in
     settings = {
       bind = [
         "SUPER, RETURN, exec, kitty" # Terminal
-        "SUPER, R, exec, rofi -show drun -show-icons" # App launcher
+        "SUPER, R, exec, wofi --show drun --no-actions" # App launcher
+        "SUPER, E, exec, wofi-emoji" # Emoji selector
         "SUPER, S, exec, nwg-drawer" # App menu
         "SUPER, TAB, cyclenext" # Window switch
         "SUPER, W, killactive" # Close window

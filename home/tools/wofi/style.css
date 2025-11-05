@@ -18,10 +18,11 @@
 
 /* --- window --- */
 window {
-  font-family: "Roboto";
-  font-size: 12px;
+  font-family: "0xProto Nerd Font";
+  font-size: 20px;
   color: @fg0; /* general text color */
   background-color: rgba(33,33,33,0.95); /* bg0 + alpha (approx #212121F2) */
+  border: 2px solid @bg3; /* bg3 */
   border-radius: 24px;
   padding: 12px; /* matches mainbox padding */
 }
@@ -34,12 +35,17 @@ window {
 /* --- input (search box) --- */
 /* maps to your inputbar { background-color: @bg1; border: 2px; border-radius: 16px; ... } */
 #input {
+  color: @fg0; /* general text color */
   background-color: @bg1;
-  border: 2px solid rgba(171,71,188,0.95); /* bg3 */
+  border: 2px solid @bg3;
   border-radius: 16px;
   padding: 8px 16px;
   min-height: 36px;
-  margin-bottom: 8px;
+}
+
+#input:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 /* the text entry inside the input */
@@ -59,6 +65,39 @@ window {
   padding-right: 8px;
 }
 
+#entry {
+  margin: 3px 0px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding: 8px 12px; /* test */
+}
+
+#text {
+  white-space: nowrap;   /* don't wrap */
+  overflow: hidden;      /* hide overflow (required for text-overflow to work) */
+  text-overflow: clip;   /* cut abruptly — or use 'ellipsis' to show "…" */
+  max-width: 100%;
+  min-width: 0;          /* important for shrinking inside flex containers */
+  display: block;        /* make width constraints work reliably */
+}
+
+#img {
+  /* fixed size icons so they don't stretch rows */
+  min-width: 0;
+  max-width: 2.0em;
+  max-height: 2.0em;
+  margin-right: 8px;
+  box-sizing: border-box;
+}
+
+/*
+* Optional: visual debug outlines (turn off when done)
+#scroll { outline: 2px dashed rgba(255,0,0,0.4); }
+#entry  { outline: 1px dashed rgba(0,255,0,0.4); }
+#text   { outline: 1px dashed rgba(0,0,255,0.2); }
+*/
+
 /* --- message box (like rofi message) --- */
 #message {
   margin-top: 12px;
@@ -72,13 +111,16 @@ window {
 /* --- list / results --- */
 #scroll {
   background-color: transparent;
-  margin-top: 12px;
+  margin-top: 8px;
   max-height: 320px; /* lines: 8 in your rofi -> approx */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* inner box that holds rows */
 #inner-box {
   spacing: 0;
+  padding: 0px 12px;
 }
 
 /* each result row (maps from element { padding: 8px 16px; spacing: 8px; border-radius: 16px; }) */

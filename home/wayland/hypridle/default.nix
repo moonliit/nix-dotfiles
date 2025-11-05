@@ -1,27 +1,28 @@
 { config, pkgs, ... }:
 
 {
-    services.hypridle = {
-        enable = true;
-        settings = {
-            general = {
-                lock_cmd = "pidof hyprlock || hyprlock"; # lock screen
-                before_sleep_cmd = "loginctl lock-session"; # lock before sleep
-                after_sleep_cmd = ""; # optional
-            };
+  services.hypridle = {
+    enable = true;
 
-            listener = [
-                {
-                    timeout = 600; # 10 min
-                    on-timeout = "hyprlock"; # run when idle
-                    on-resume = "";          # when resumed
-                }
-                {
-                    timeout = 900; # 15 min
-                    on-timeout = "systemctl suspend";
-                    on-resume = "";
-                }
-            ];
-        };
+    settings = {
+      general = {
+        lock_cmd = "pidof hyprlock || hyprlock"; # lock screen
+        before_sleep_cmd = "loginctl lock-session"; # lock before sleep
+        after_sleep_cmd = ""; # optional
+      };
+
+      listener = [
+        {
+          timeout = 600; # 10 min
+          on-timeout = "hyprlock"; # run when idle
+          on-resume = "";          # when resumed
+        }
+        {
+          timeout = 900; # 15 min
+          on-timeout = "systemctl suspend";
+          on-resume = "";
+        }
+      ];
     };
+  };
 }
