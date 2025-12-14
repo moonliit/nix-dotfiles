@@ -26,8 +26,8 @@
       query # treesitter queries
       vim
       vimdoc
-      # lua
-      # luadoc
+      lua
+      luadoc
 
       # General Development
       csv
@@ -39,12 +39,13 @@
       gitcommit
       gitignore
       ini
-      # llvm
+      llvm
       markdown
       markdown_inline
       regex
-      # xml
+      xml
       yaml
+      python
 
       # Rust Development
       rust
@@ -53,18 +54,18 @@
       # Web Development
       css
       html
-      # http
+      http
       javascript
+      typescript
+      tsx
       json
-      # json5
+      json5
       # php
       # php_only
       # phpdoc
       # sql
       # scss
       # twig
-      # tsx
-      # typescript
 
       # Web - other
       # astro
@@ -108,5 +109,9 @@
       #    - Show your current context: https://nix-community.github.io/nixvim/plugins/treesitter-context/index.html
       #    - Treesitter + textobjects: https://nix-community.github.io/nixvim/plugins/treesitter-textobjects/index.html
     };
+
+    luaConfig.post = ''
+      -- lmao
+    '';
   };
 }

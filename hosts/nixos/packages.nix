@@ -2,6 +2,11 @@
 with pkgs;
 
 let
+  # Apps
+  apps = [
+
+  ];
+
   # Editors / IDEs
   editors = [
     vim
@@ -31,6 +36,7 @@ let
     gnumake
     ninja
     mosquitto
+    sequoia-sq
   ];
 
   # Languages & tooling
@@ -38,6 +44,7 @@ let
     python312
     rustc rustup cargo
     jdk
+    nodejs_20
     mpich
     openmpi
   ];
@@ -149,6 +156,7 @@ let
   ];
 
 in
+  apps ++
   editors ++
   terminals_and_shells ++
   build_tools ++

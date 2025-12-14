@@ -20,23 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    dms-cli = {
-      url = "github:AvengeMedia/danklinux";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-      inputs.dgop.follows = "dgop";
-      inputs.dms-cli.follows = "dms-cli";
-    };
-
     # Extra packages
     nixcord.url = "github:kaylorben/nixcord";
     nixowos.url = "github:yunfachi/nixowos";
@@ -68,7 +51,6 @@
 
         modules = [
           ./home/home.nix
-          inputs.dms.homeModules.dankMaterialShell.default
           inputs.nixcord.homeModules.nixcord
           inputs.nixowos.homeModules.default
           inputs.nixvim.homeModules.nixvim
@@ -89,7 +71,10 @@
       # nixos configuration
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          inherit pkgs-unstable;
+        };
 
         modules = [
           ./hosts/nixos/configuration.nix

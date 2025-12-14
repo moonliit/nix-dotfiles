@@ -113,9 +113,17 @@ in
     listeners = [
       {
         port = 1883;
+        address = "0.0.0.0";
         settings.allow_anonymous = true;
       }
     ];
+    logType = ["all"];
+    persistence = false;
+  };
+
+  # Enable docker
+  virtualisation.docker = {
+    enable = true;
   };
 
   # Enable programs

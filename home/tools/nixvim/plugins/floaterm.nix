@@ -16,10 +16,10 @@
 
       # keymaps
       keymap_toggle = "<C-/>";      # toggle main floaterm
-      keymap_new    = "<leader>t";  # open a new floaterm
-      keymap_next   = "<leader>l";  # next floaterm
-      keymap_prev   = "<leader>h";  # previous floaterm
-      keymap_kill   = "<leader>x";  # kill current floaterm
+      #keymap_new    = "<leader>t";  # open a new floaterm
+      #keymap_next   = "<leader>l";  # next floaterm
+      #keymap_prev   = "<leader>h";  # previous floaterm
+      #keymap_kill   = "<leader>x";  # kill current floaterm
    };
   };
 

@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   programs.nixcord = {
     enable = true;
@@ -14,17 +12,17 @@
 
     config = {
       useQuickCss = true;
-      
+
       plugins = {
         betterGifPicker.enable = true;
-        blurNSFW.enable = true;
+        blurNsfw.enable = true;
         callTimer.enable = true;
         crashHandler.enable = true;
         disableCallIdle.enable = true;
         fakeNitro.enable = true;
         decor.enable = true;
       };
-    
+
       themeLinks = [
         "https://devevil99.github.io/devevil/BetterDiscordAddons/Theme/Dark%2B/Dark%2B-Default-Member-List.css"
         "https://catppuccin.github.io/discord/dist/catppuccin-macchiato.theme.css"
